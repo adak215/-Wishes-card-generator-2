@@ -1,0 +1,2681 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="referrer" content="no-referrer" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src data: blob: https:; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23BC3F21' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='4' y='11' width='16' height='9.5'/%3E%3Cpath d='M12 11v9.5M3.5 7.5h17V11h-17Z'/%3E%3Cpath d='M12 7.5C8.5 7.5 7.6 4 9.8 3.6c1.5-.3 2.2 1.7 2.2 3.9Zm0 0c3.5 0 4.4-3.5 2.2-3.9-1.5-.3-2.2 1.7-2.2 3.9Z'/%3E%3C/svg%3E" />
+    <title>Wishes Card Generator — Birthday, Wedding & Anniversary Cards</title>
+    <meta name="description" content="Free wishes card generator with 160+ ready-made messages: type a name and get auto-selected birthday wishes, wedding wishes, anniversary wishes, Eid, Diwali & Christmas messages in English and Roman Urdu. Unlock sealed gift-style messages, pick from 18 designs, and download your card as a picture or an interactive 3D gift." />
+    <meta name="keywords" content="wishes card generator, birthday wishes, happy birthday messages, wedding wishes, anniversary wishes, eid mubarak wishes, diwali wishes, christmas wishes, new year wishes, congratulations messages, new baby wishes, graduation wishes, valentine wishes, thank you messages, good luck wishes, roman urdu wishes, greeting card maker, free wish cards, 3d gift card" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Wishes Card Generator" />
+    <meta name="theme-color" content="#FAF3E7" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#16110C" media="(prefers-color-scheme: dark)" />
+    <!-- Open Graph — replace the example.com URLs below with the real domain once the page is hosted live. -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Wishes Card Generator" />
+    <meta property="og:title" content="Wishes Card Generator — Birthday, Wedding & Anniversary Cards" />
+    <meta property="og:description" content="Type a name, unlock sealed gift-style wishes for birthdays, weddings, anniversaries, Eid, Diwali and more — in English & Roman Urdu. Download as a picture or an interactive 3D gift. Free, no sign-up." />
+    <meta property="og:url" content="https://example.com/wishes-card-generator/" />
+    <meta property="og:image" content="https://example.com/wishes-card-generator/og-card.jpg" />
+    <meta property="og:image:width" content="1080" />
+    <meta property="og:image:height" content="1350" />
+    <meta property="og:image:alt" content="Gift-style wishes card made with the Wishes Card Generator" />
+    <meta property="og:locale" content="en_US" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Wishes Card Generator — Birthday, Wedding & Anniversary Cards" />
+    <meta name="twitter:description" content="Type a name, unlock sealed gift-style wishes for birthdays, weddings, anniversaries, Eid, Diwali and more — in English & Roman Urdu. Download as a picture or an interactive 3D gift. Free, no sign-up." />
+    <meta name="twitter:image" content="https://example.com/wishes-card-generator/og-card.jpg" />
+    <meta name="twitter:image:alt" content="Gift-style wishes card made with the Wishes Card Generator" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,800;1,600&family=Great+Vibes&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" />
+    <style>
+      :root{
+        --bg:#FAF3E7;
+        --surface:#FFFDF7;
+        --surface-2:#F6EBD7;
+        --ink:#2C2015;
+        --muted:#7D6A52;
+        --accent:#BC3F21;
+        --accent-soft:#F9E3D8;
+        --gold:#A97E14;
+        --gold-soft:#F3E5BE;
+        --line:#E8D9BE;
+        --shadow:0 18px 40px rgba(90,58,16,.14);
+        --radius:18px;
+      }
+      @media (prefers-color-scheme: dark){
+        :root{
+          --bg:#16110C;
+          --surface:#211A12;
+          --surface-2:#2A2115;
+          --ink:#F4EAD6;
+          --muted:#B7A586;
+          --accent:#E8704C;
+          --accent-soft:#3D241A;
+          --gold:#D9AE4A;
+          --gold-soft:#3A2F16;
+          --line:#3D2F1D;
+          --shadow:0 18px 40px rgba(0,0,0,.5);
+        }
+      }
+      *{box-sizing:border-box;}
+      html{scroll-behavior:smooth;}
+      body{
+        margin:0;
+        background:var(--bg);
+        color:var(--ink);
+        font-family:"Nunito",system-ui,sans-serif;
+        -webkit-font-smoothing:antialiased;
+      }
+      .wrap{max-width:1200px;margin:0 auto;padding:26px 18px 56px;}
+      .intro{max-width:720px;margin:6px 0 22px;}
+      .intro h1{
+        font-family:"Playfair Display",serif;
+        font-weight:800;
+        font-size:clamp(30px,4.6vw,46px);
+        line-height:1.08;
+        margin:0 0 10px;
+      }
+      .intro h1 em{font-style:italic;color:var(--accent);}
+      .intro p{margin:0;color:var(--muted);font-size:17px;line-height:1.55;font-weight:600;}
+
+      .studio{display:grid;grid-template-columns:minmax(0,1fr) 430px;gap:26px;align-items:start;}
+      @media (max-width:960px){.studio{grid-template-columns:1fr;}}
+
+      .panel{
+        background:var(--surface);
+        border:1px solid var(--line);
+        border-radius:var(--radius);
+        box-shadow:var(--shadow);
+        padding:22px;
+      }
+      .panel + .panel{margin-top:20px;}
+      .step-head{display:flex;align-items:center;gap:12px;margin-bottom:16px;}
+      .step-num{
+        width:30px;height:30px;flex:0 0 30px;border-radius:50%;
+        background:var(--accent);color:#FFF7EA;
+        display:flex;align-items:center;justify-content:center;
+        font-weight:800;font-size:15px;
+      }
+      .step-head h2{font-family:"Playfair Display",serif;font-size:21px;margin:0;font-weight:800;}
+      .step-head p{margin:0 0 0 auto;color:var(--muted);font-size:13px;font-weight:700;text-align:right;}
+
+      label.field-label{display:block;font-size:13px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);margin:0 0 8px;}
+      .fields{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:18px;}
+      @media (max-width:520px){.fields{grid-template-columns:1fr;}}
+      input[type="text"]{
+        width:100%;padding:13px 14px;border-radius:12px;
+        border:1.5px solid var(--line);background:var(--bg);color:var(--ink);
+        font-family:inherit;font-size:16px;font-weight:600;outline:none;
+      }
+      input[type="text"]:focus{border-color:var(--gold);box-shadow:0 0 0 3px var(--gold-soft);}
+
+      .occ-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(118px,1fr));gap:9px;}
+      .occ-btn{
+        display:flex;flex-direction:column;align-items:center;gap:7px;
+        padding:13px 6px 11px;border-radius:14px;cursor:pointer;
+        border:1.5px solid var(--line);background:var(--bg);color:var(--ink);
+        font-family:inherit;font-size:13.5px;font-weight:800;
+        transition:border-color .15s, background .15s, transform .15s;
+      }
+      .occ-btn svg{width:26px;height:26px;color:var(--gold);}
+      .occ-btn:hover{transform:translateY(-2px);border-color:var(--gold);}
+      .occ-btn.active{background:var(--accent-soft);border-color:var(--accent);color:var(--accent);}
+      .occ-btn.active svg{color:var(--accent);}
+
+      .row-label{margin:18px 0 8px;}
+      .pill-row{display:flex;flex-wrap:wrap;gap:8px;}
+      .pill{
+        padding:9px 15px;border-radius:999px;cursor:pointer;
+        border:1.5px solid var(--line);background:var(--bg);color:var(--ink);
+        font-family:inherit;font-size:14px;font-weight:800;
+        transition:all .15s;
+      }
+      .pill:hover{border-color:var(--gold);}
+      .pill.active{background:var(--ink);color:var(--bg);border-color:var(--ink);}
+      .seg{display:inline-flex;border:1.5px solid var(--line);border-radius:999px;overflow:hidden;background:var(--bg);}
+      .seg button{
+        padding:9px 16px;border:0;background:transparent;color:var(--muted);
+        font-family:inherit;font-size:14px;font-weight:800;cursor:pointer;
+      }
+      .seg button.active{background:var(--gold);color:#241A04;}
+      .controls-row{display:flex;flex-wrap:wrap;gap:16px;align-items:flex-end;justify-content:space-between;}
+      .controls-row .group{min-width:0;}
+
+      .msg-tools{display:flex;gap:9px;flex-wrap:wrap;}
+      .btn{
+        display:inline-flex;align-items:center;gap:8px;
+        padding:11px 18px;border-radius:12px;cursor:pointer;border:0;
+        font-family:inherit;font-size:15px;font-weight:800;
+        transition:transform .12s, opacity .12s;
+      }
+      .btn:active{transform:scale(.97);}
+      .btn-primary{background:var(--accent);color:#FFF7EA;box-shadow:0 8px 18px rgba(188,63,33,.28);}
+      .btn-ghost{background:var(--surface-2);color:var(--ink);border:1.5px solid var(--line);}
+      .btn svg{width:18px;height:18px;}
+      .unlock-status{margin:12px 2px 0;font-size:13.5px;font-weight:800;color:var(--muted);}
+      .unlock-status strong{color:var(--accent);}
+      .library-badge{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:0 0 14px;padding:11px 13px;border-radius:12px;background:var(--gold-soft);border:1px solid var(--line);font-size:13.5px;font-weight:800;line-height:1.45;color:var(--ink);}
+      .library-badge b{color:var(--accent);}
+      .library-badge span{color:var(--muted);font-weight:700;}
+      .msg-list{display:grid;gap:10px;margin-top:16px;}
+      .msg-card{position:relative;overflow:hidden;}
+      .msg-card .msg-body{transition:filter .45s ease,opacity .45s ease;}
+      .msg-card.locked .msg-body{filter:blur(7px);opacity:.45;user-select:none;pointer-events:none;}
+      .msg-card.locked{cursor:pointer;border-style:dashed;background:var(--surface-2);}
+      .lock-overlay{
+        position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;
+        background:linear-gradient(180deg,rgba(0,0,0,.02),rgba(0,0,0,.06));text-align:center;padding:14px;
+      }
+      .lock-badge{
+        width:46px;height:46px;border-radius:50%;background:var(--ink);color:var(--bg);
+        display:flex;align-items:center;justify-content:center;box-shadow:0 10px 20px rgba(0,0,0,.22);
+        animation:lockWiggle 2.6s ease-in-out infinite;
+      }
+      .lock-badge svg{width:22px;height:22px;}
+      .lock-overlay strong{font-size:15px;}
+      .lock-overlay span{font-size:12.5px;font-weight:800;color:var(--muted);letter-spacing:.03em;text-transform:uppercase;}
+      @keyframes lockWiggle{0%,100%{transform:rotate(0)}8%{transform:rotate(-9deg)}16%{transform:rotate(8deg)}24%{transform:rotate(0)}}
+      .msg-card.unlocking{animation:unlockPop .65s cubic-bezier(.2,.9,.3,1.35) both;}
+      @keyframes unlockPop{0%{transform:scale(.96)}45%{transform:scale(1.025) rotate(-.4deg)}100%{transform:scale(1)}}
+      .msg-card .fav-btn{
+        border:0;background:transparent;cursor:pointer;font-size:17px;line-height:1;padding:4px 6px;border-radius:8px;color:var(--muted);
+      }
+      .msg-card .fav-btn.active{color:var(--accent);transform:scale(1.15);}
+      .design-tools{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:14px;}
+      .design-count{font-size:13px;font-weight:800;color:var(--muted);}
+      .msg-card{
+        text-align:left;width:100%;cursor:pointer;
+        background:var(--bg);border:1.5px solid var(--line);border-radius:14px;
+        padding:15px 16px;font-family:inherit;color:var(--ink);
+        transition:border-color .15s, background .15s;
+      }
+      .msg-card:hover{border-color:var(--gold);}
+      .msg-card.selected{border-color:var(--accent);background:var(--accent-soft);}
+      .msg-card p{margin:0;font-size:15.5px;line-height:1.55;font-weight:600;}
+      .msg-card .msg-meta{display:flex;justify-content:space-between;align-items:center;margin-top:10px;}
+      .tag{font-size:11.5px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--gold);}
+      .deco-chip{
+        font-size:11.5px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);
+        background:var(--surface-2);border:1px solid var(--line);padding:3px 10px;border-radius:999px;white-space:nowrap;
+      }
+      .msg-deco{position:absolute;top:2px;right:12px;font-size:44px;line-height:1;opacity:.14;pointer-events:none;}
+      .msg-card.selected .tag{color:var(--accent);}
+      .copy-mini{
+        border:0;background:transparent;color:var(--muted);cursor:pointer;
+        font-family:inherit;font-size:13px;font-weight:800;display:inline-flex;gap:5px;align-items:center;padding:4px 6px;border-radius:8px;
+      }
+      .copy-mini:hover{color:var(--accent);background:var(--surface);}
+      .copy-mini svg{width:15px;height:15px;}
+
+      .preview-col{position:sticky;top:18px;}
+      @media (max-width:960px){.preview-col{position:static;}}
+      .canvas-frame{
+        background:var(--surface);border:1px solid var(--line);border-radius:22px;
+        box-shadow:var(--shadow);padding:14px;
+      }
+      canvas#cardCanvas{width:100%;height:auto;display:block;border-radius:12px;}
+      .swatch-row{display:flex;flex-wrap:wrap;gap:9px;margin:16px 2px 4px;}
+      .swatch{
+        width:44px;height:44px;border-radius:12px;cursor:pointer;
+        border:2.5px solid transparent;padding:0;position:relative;
+        transition:transform .12s;
+      }
+      .swatch:hover{transform:translateY(-2px);}
+      .swatch.active{border-color:var(--accent);box-shadow:0 0 0 2px var(--surface),0 0 0 4px var(--accent);}
+      .theme-name{font-size:13.5px;font-weight:800;color:var(--muted);margin:8px 2px 0;}
+      .preview-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px;}
+      .preview-actions .btn{justify-content:center;padding:14px 10px;text-align:center;line-height:1.25;}
+      .preview-actions .btn small{display:block;font-size:11.5px;font-weight:700;opacity:.85;letter-spacing:.02em;}
+      .btn-gold{background:var(--gold);color:#241A04;box-shadow:0 8px 18px rgba(169,126,20,.3);}
+      .btn-gift3d{background:var(--accent);color:#FFF7EA;box-shadow:0 8px 18px rgba(188,63,33,.32);}
+      .btn-gift3d svg{flex:0 0 auto;}
+      .preview-actions .btn-copy{grid-column:1 / -1;padding:11px 10px;}
+      .download-note{margin:10px 2px 0;font-size:13px;line-height:1.5;font-weight:700;color:var(--muted);}
+      .download-note strong{color:var(--ink);}
+      .how{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:26px;}
+      @media (max-width:760px){.how{grid-template-columns:1fr;}}
+      .how-item{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:18px;}
+      .how-item h3{font-family:"Playfair Display",serif;margin:0 0 6px;font-size:17.5px;}
+      .how-item p{margin:0;color:var(--muted);font-size:14.5px;line-height:1.55;font-weight:600;}
+
+      .toast{
+        position:fixed;left:50%;bottom:26px;transform:translate(-50%,80px);
+        background:var(--ink);color:var(--bg);padding:13px 22px;border-radius:999px;
+        font-weight:800;font-size:15px;box-shadow:var(--shadow);z-index:50;
+        transition:transform .3s ease;pointer-events:none;max-width:90vw;text-align:center;
+      }
+      .toast.show{transform:translate(-50%,0);}
+
+      /* ===== Human verification & security strip ===== */
+      .verify-backdrop{position:fixed;inset:0;background:rgba(24,14,4,.58);display:flex;align-items:center;justify-content:center;padding:18px;z-index:90;}
+      .verify-backdrop[hidden]{display:none;}
+      .verify-box{background:var(--surface);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);width:100%;max-width:410px;padding:26px 24px 20px;text-align:center;}
+      .verify-box.wrong{animation:verifyShake .45s ease;}
+      @keyframes verifyShake{0%,100%{transform:translateX(0)}20%{transform:translateX(-9px)}40%{transform:translateX(8px)}60%{transform:translateX(-5px)}80%{transform:translateX(4px)}}
+      .verify-shield{width:54px;height:54px;margin:0 auto 10px;border-radius:50%;background:var(--gold-soft);color:var(--gold);display:flex;align-items:center;justify-content:center;}
+      .verify-shield svg{width:28px;height:28px;}
+      .verify-box h3{font-family:"Playfair Display",serif;font-size:22px;margin:0 0 6px;}
+      .verify-box p{margin:0;color:var(--muted);font-size:14.5px;line-height:1.55;font-weight:600;}
+      .verify-box .verify-q{font-size:27px;font-weight:800;color:var(--ink);margin:16px 0 2px;}
+      .verify-opts{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:14px 0 10px;}
+      .verify-opts button{padding:14px 6px;border-radius:12px;border:1.5px solid var(--line);background:var(--bg);color:var(--ink);font-family:inherit;font-size:19px;font-weight:800;cursor:pointer;transition:border-color .15s,transform .12s;}
+      .verify-opts button:hover{border-color:var(--gold);transform:translateY(-2px);}
+      .verify-box .verify-note{font-size:13px;min-height:20px;}
+      .verify-cancel{margin-top:12px;}
+      .security-strip{margin-top:26px;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:20px 22px;display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+      @media (max-width:760px){.security-strip{grid-template-columns:1fr;}}
+      .sec-item h3{font-family:"Playfair Display",serif;margin:0 0 6px;font-size:16.5px;display:flex;align-items:center;gap:8px;}
+      .sec-item h3 svg{width:19px;height:19px;color:var(--gold);flex:0 0 auto;}
+      .sec-item p{margin:0;color:var(--muted);font-size:14px;line-height:1.55;font-weight:600;}
+
+      /* ============ 3D ANIMATIONS ============ */
+      .bg-3d{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden;perspective:900px;}
+      .bg-3d span{position:absolute;border-radius:50%;opacity:.55;animation:float3d 9s ease-in-out infinite;transform-style:preserve-3d;}
+      .bg-3d span:nth-child(1){width:72px;height:72px;left:4%;top:12%;background:radial-gradient(circle at 30% 30%,#fff,var(--gold-soft) 45%,var(--gold));animation-delay:0s;}
+      .bg-3d span:nth-child(2){width:44px;height:44px;right:6%;top:16%;background:radial-gradient(circle at 30% 30%,#fff,var(--accent-soft),var(--accent));animation-delay:-2s;}
+      .bg-3d span:nth-child(3){width:54px;height:54px;left:8%;bottom:14%;background:radial-gradient(circle at 30% 30%,#fff,#FDE8B8,#E9B949);animation-delay:-4s;width:54px;height:54px;}
+      .bg-3d span:nth-child(4){width:34px;height:34px;right:10%;bottom:22%;background:radial-gradient(circle at 30% 30%,#fff,var(--accent-soft),var(--accent));animation-delay:-1s;}
+      .bg-3d span:nth-child(5){width:22px;height:22px;left:46%;top:6%;background:var(--gold);animation-delay:-3s;}
+      .bg-3d i{position:absolute;font-style:normal;animation:float3d 11s ease-in-out infinite;opacity:.9;}
+      .bg-3d i:nth-of-type(1){left:12%;top:38%;animation-delay:-.5s;}
+      .bg-3d i:nth-of-type(2){right:11%;top:46%;animation-delay:-3.5s;}
+      .bg-3d i:nth-of-type(3){left:84%;top:72%;animation-delay:-6s;}
+      @keyframes float3d{
+        0%,100%{transform:translate3d(0,0,0) rotateX(0deg) rotateY(0deg) rotate(0deg);}
+        25%{transform:translate3d(10px,-22px,60px) rotateX(18deg) rotateY(24deg) rotate(8deg);}
+        50%{transform:translate3d(0,-38px,0) rotateX(0deg) rotateY(40deg) rotate(-6deg);}
+        75%{transform:translate3d(-12px,-14px,40px) rotateX(-16deg) rotateY(18deg) rotate(5deg);}
+      }
+      .wrap{position:relative;z-index:1;}
+      .intro h1{animation:heroIn .9s cubic-bezier(.2,.9,.2,1) both;transform-style:preserve-3d;}
+      @keyframes heroIn{from{opacity:0;transform:perspective(800px) rotateX(18deg) translateY(22px);}to{opacity:1;transform:perspective(800px) rotateX(0) translateY(0);}}
+      .panel{transform-style:preserve-3d;}
+      .panel-3d{animation:panelIn .7s cubic-bezier(.2,.9,.25,1) both;}
+      .panel-3d:nth-child(2){animation-delay:.08s;}
+      @keyframes panelIn{from{opacity:0;transform:perspective(1000px) rotateX(10deg) translateY(18px);}to{opacity:1;transform:perspective(1000px) rotateX(0) translateY(0);}}
+
+      .occ-btn{transform-style:preserve-3d;will-change:transform;}
+      .occ-btn:hover{transform:perspective(600px) translateY(-5px) rotateX(8deg) rotateY(-6deg) translateZ(10px);box-shadow:0 14px 24px rgba(0,0,0,.14);}
+      .occ-btn.active{transform:perspective(600px) translateZ(8px) scale(1.03);box-shadow:0 10px 20px rgba(188,63,33,.22);}
+      .pill{transform-style:preserve-3d;}
+      .pill:hover{transform:perspective(500px) rotateX(10deg) translateY(-2px);}
+      .pill.active{transform:perspective(500px) translateZ(6px);}
+      .btn{transform-style:preserve-3d;box-shadow:0 6px 0 rgba(0,0,0,.12);transition:transform .15s,box-shadow .15s;}
+      .btn:hover{transform:perspective(600px) translateY(-3px) rotateX(6deg);box-shadow:0 10px 0 rgba(0,0,0,.10),0 18px 28px rgba(0,0,0,.16);}
+      .btn:active{transform:translateY(3px) scale(.98);box-shadow:0 2px 0 rgba(0,0,0,.12);}
+      .swatch{transform-style:preserve-3d;}
+      .swatch:hover{transform:perspective(500px) rotateX(12deg) rotateY(-10deg) translateY(-4px) scale(1.08);box-shadow:0 12px 20px rgba(0,0,0,.18);}
+      .swatch.active{transform:perspective(500px) translateZ(10px) scale(1.06);}
+
+      .msg-card{transform-style:preserve-3d;animation:msgIn .55s cubic-bezier(.2,.9,.3,1) both;}
+      .msg-card:hover{transform:perspective(800px) rotateX(3deg) rotateY(-2deg) translateY(-3px) translateZ(8px);box-shadow:0 16px 28px rgba(0,0,0,.12);}
+      .msg-card.selected{transform:perspective(800px) translateZ(6px);}
+      @keyframes msgIn{from{opacity:0;transform:perspective(800px) rotateX(16deg) translateY(18px) translateZ(-30px);}to{opacity:1;transform:perspective(800px) rotateX(0) translateY(0) translateZ(0);}}
+
+      /* 3D Card Scene */
+      .card-scene{perspective:1400px;perspective-origin:50% 40%;}
+      .tilt-wrap{position:relative;transform-style:preserve-3d;will-change:transform;transition:transform .45s cubic-bezier(.2,.8,.2,1);}
+      .tilt-wrap.is-tilting{transition:transform .08s linear;}
+      .tilt-wrap .canvas-frame{transform:translateZ(28px);box-shadow:0 28px 50px rgba(0,0,0,.22),0 8px 18px rgba(0,0,0,.12);}
+      .card-shadow{position:absolute;left:6%;right:6%;bottom:-14px;height:28px;background:radial-gradient(ellipse at center,rgba(0,0,0,.32),transparent 70%);filter:blur(6px);transform:translateZ(-40px);z-index:-1;}
+      .shine{position:absolute;inset:14px;border-radius:16px;pointer-events:none;overflow:hidden;transform:translateZ(34px);opacity:0;transition:opacity .3s;}
+      .tilt-wrap:hover .shine,.tilt-wrap.is-tilting .shine{opacity:1;}
+      .shine::before{content:"";position:absolute;inset:-40%;background:radial-gradient(circle at var(--mx,50%) var(--my,50%),rgba(255,255,255,.55) 0%,rgba(255,255,255,.12) 28%,transparent 55%);mix-blend-mode:soft-light;}
+      .shine::after{content:"";position:absolute;top:-60%;left:-80%;width:55%;height:220%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.45),transparent);transform:rotate(12deg);animation:shineSweep 4.2s ease-in-out infinite;}
+      @keyframes shineSweep{0%,55%{left:-80%;}85%,100%{left:130%;}}
+      .float-chip{position:absolute;z-index:3;pointer-events:none;transform-style:preserve-3d;animation:chipFloat 5.5s ease-in-out infinite;filter:drop-shadow(0 10px 14px rgba(0,0,0,.22));}
+      .float-chip.c1{top:-10px;left:-8px;animation-delay:0s;}
+      .float-chip.c2{top:38%;right:-14px;animation-delay:-1.8s;}
+      .float-chip.c3{bottom:-8px;left:18px;animation-delay:-3.2s;}
+      @keyframes chipFloat{0%,100%{transform:translate3d(0,0,55px) rotateY(-12deg) rotateX(8deg);}50%{transform:translate3d(0,-14px,75px) rotateY(14deg) rotateX(-8deg);}}
+      .tilt-wrap.flipping{animation:cardFlip .82s cubic-bezier(.2,.7,.2,1) both;}
+      @keyframes cardFlip{0%{transform:perspective(1400px) rotateY(0deg);}38%{transform:perspective(1400px) rotateY(-88deg) scale(.96);}62%{transform:perspective(1400px) rotateY(14deg) scale(1.01);}100%{transform:perspective(1400px) rotateY(0deg);}}
+      .tilt-wrap.celebrating{animation:celebratePop .7s cubic-bezier(.2,.9,.3,1.4) both;}
+      @keyframes celebratePop{0%{transform:scale(1) rotate(0);}35%{transform:scale(1.045) rotate(-1.2deg) translateY(-6px);}65%{transform:scale(.985) rotate(1deg);}100%{transform:scale(1) rotate(0);}}
+      .burst-piece{position:absolute;left:50%;top:42%;width:12px;height:12px;border-radius:3px;pointer-events:none;z-index:5;will-change:transform,opacity;}
+      .motion-row{display:flex;flex-wrap:wrap;gap:9px;margin-top:12px;}
+      .motion-row .btn{flex:1;justify-content:center;padding:11px 10px;font-size:14px;}
+      .how-item{transform-style:preserve-3d;transition:transform .25s,box-shadow .25s;}
+      .how-item:hover{transform:perspective(800px) rotateX(4deg) rotateY(-3deg) translateY(-4px);box-shadow:var(--shadow);}
+      body.motion-off .bg-3d,body.motion-off .float-chip,body.motion-off .shine{display:none !important;}
+      body.motion-off *{animation:none !important;}
+      @media (prefers-reduced-motion: reduce){
+        *{transition:none !important;animation:none !important;}
+        html{scroll-behavior:auto;}
+        .bg-3d,.float-chip,.shine{display:none !important;}
+      }
+
+      /* ===== SEO content sections, FAQ & footer ===== */
+      .seo-section{margin-top:26px;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:24px 22px;}
+      .seo-section > h2{font-family:"Playfair Display",serif;font-size:clamp(23px,3vw,29px);margin:0 0 8px;font-weight:800;}
+      .seo-section > p.lede{margin:0 0 20px;color:var(--muted);font-size:15.5px;line-height:1.6;font-weight:600;max-width:70ch;}
+      .occ-seo-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(272px,1fr));gap:14px;}
+      .occ-seo{background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:17px 18px;}
+      .occ-seo h3{font-family:"Playfair Display",serif;font-size:18.5px;margin:0 0 7px;font-weight:800;}
+      .occ-seo h3 a{color:inherit;text-decoration:none;}
+      .occ-seo h3 a:hover{color:var(--accent);text-decoration:underline;}
+      .occ-seo p{margin:0;color:var(--muted);font-size:14.5px;line-height:1.6;font-weight:600;}
+      .faq-list{display:grid;gap:10px;}
+      .faq-item{background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:4px 18px;}
+      .faq-item summary{cursor:pointer;font-weight:800;font-size:16px;padding:13px 0;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px;}
+      .faq-item summary::-webkit-details-marker{display:none;}
+      .faq-item summary::after{content:"+";font-size:22px;font-weight:800;color:var(--accent);flex:0 0 auto;line-height:1;}
+      .faq-item[open ] summary::after{content:"–";}
+      .faq-item summary:hover{color:var(--accent);}
+      .faq-item p{margin:0 0 15px;color:var(--muted);font-size:15px;line-height:1.65;font-weight:600;}
+      .faq-item a,.seo-section p a{color:var(--accent);font-weight:800;}
+      .site-footer{margin-top:30px;border-top:1px solid var(--line);padding:24px 4px 4px;text-align:center;}
+      .site-footer .foot-brand{font-family:"Playfair Display",serif;font-size:19px;font-weight:800;margin:0 0 6px;}
+      .site-footer p{margin:0 auto 12px;color:var(--muted);font-size:14px;line-height:1.6;font-weight:600;max-width:64ch;}
+      .foot-links{display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:center;margin:0 0 12px;}
+      .foot-links a{color:var(--accent);font-weight:800;font-size:14px;text-decoration:none;}
+      .foot-links a:hover{text-decoration:underline;}
+      .site-footer .foot-note{font-size:12.5px;margin-bottom:0;}
+      .site-footer .foot-contact{font-size:14.5px;margin-bottom:10px;}
+      .site-footer .foot-contact a{color:var(--accent);font-weight:800;text-decoration:none;word-break:break-all;}
+      .site-footer .foot-contact a:hover{text-decoration:underline;}
+    </style>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Wishes Card Generator",
+      "url": "https://example.com/wishes-card-generator/",
+      "applicationCategory": "LifestyleApplication",
+      "operatingSystem": "Any (web browser)",
+      "browserRequirements": "Requires JavaScript",
+      "description": "Free wishes card generator: type a name and get ready-made birthday wishes, wedding wishes, anniversary wishes, Eid, Diwali and Christmas messages in English and Roman Urdu. Unlock sealed gift-style messages, pick from 18 designs, and download your card as a picture or an interactive 3D gift.",
+      "inLanguage": ["en", "ur"],
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "featureList": "160+ ready-made messages library auto-selected for each occasion; 13 occasions: Birthday, Wedding, Anniversary, New Baby, Congratulations, Graduation, Eid, Diwali, Christmas, New Year, Valentine's, Thank You, Good Luck; Heartfelt, Joyful, Funny and Formal message styles; English and Roman Urdu messages; sealed locked messages that open on tap; 18 gift-style card designs; balloons, hearts, flowers, butterflies, sparkles and confetti decorations; PNG picture download; interactive locked 3D gift download that opens the moment it is tapped"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is the Wishes Card Generator free?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes — completely free. There is no sign-up, no account and nothing to install. Type a name, choose an occasion, unlock a message and download your card, all in your browser." }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I download my card as a picture?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Type the person's name, pick an occasion, tap a sealed message to unlock it, choose one of the 18 designs, then press Download picture. You get a high-quality PNG image that is ready to share on WhatsApp, Facebook or anywhere else. The first download of each visit asks for a quick human check to keep bots away." }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the 3D gift download, and how does the recipient unlock it?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Download 3D gift saves a small interactive gift file instead of a picture. Send that file to the person — when they open it, they see a sealed, floating 3D gift box with their name on it, and your message stays hidden. They tap the gift, the lid flies off with a confetti burst, and your card flips open in 3D. They can even lock it again and replay the surprise." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I get wishes in Roman Urdu?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Use the Message language switch in Step 1 to choose Roman Urdu — messages are then written in easy-to-read Roman Urdu (Urdu in Latin letters), perfect for WhatsApp. English is available too, in Heartfelt, Joyful, Funny and Formal styles." }
+        },
+        {
+          "@type": "Question",
+          "name": "Are the messages really different every time?",
+          "acceptedAnswer": { "@type": "Answer", "text": "The generator builds each set of six messages from a very large pool of openings, middles and endings for every occasion and style, and never repeats a line inside one set. That makes the exact same set coming up twice extremely unlikely — virtually never." }
+        },
+        {
+          "@type": "Question",
+          "name": "Which occasions are covered?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Thirteen occasions: Birthday, Wedding, Anniversary, New Baby, Congratulations, Graduation, Eid Mubarak, Diwali, Christmas, New Year, Valentine's Day, Thank You and Good Luck — each with its own messages, headline and decoration style." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is my name or message sent anywhere?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. Everything runs on your own device: names and messages are processed in your browser and your picture and 3D gift downloads are created locally. Nothing you type is sent to a server, and there is no account or password on this page." }
+        }
+      ]
+    }
+    </script>
+  </head>
+  <body>
+    <div class="bg-3d" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><i>🎈</i><i>✨</i><i>🎁</i></div>
+    <div class="wrap">
+      <div class="intro">
+        <h1>Wishes Card Generator — type a name, get a <em>gift-ready</em> wish card</h1>
+        <p>Pick an occasion — birthday, wedding, anniversary, Eid and more — and messages <strong>auto-select for that occasion</strong> from a library of <strong>160+ ready-made wishes</strong>, plus a fresh generator that writes a brand-new set every time. Every message arrives <strong>locked like a sealed gift</strong> — tap it to open and reveal your surprise wish. And every message carries its own decoration style — <strong>balloons, hearts, flowers, butterflies, sparkles or confetti</strong> — the card redraws to match whichever wish you open. Choose from <strong>18 gift-style designs</strong>, tilt the card in 3D, then download it two ways: as a <strong>picture (PNG)</strong> to share anywhere, or as an <strong>interactive 3D gift file</strong> that stays locked until the person you send it to taps to unlock it.</p>
+      </div>
+
+      <div class="studio">
+        <div>
+          <section class="panel panel-3d" aria-label="Step 1: name and occasion">
+            <div class="step-head">
+              <span class="step-num">1</span>
+              <h2>Who is it for?</h2>
+              <p>Messages update<br />as you type</p>
+            </div>
+            <div class="fields">
+              <div>
+                <label class="field-label" for="nameInput">Their name</label>
+                <input type="text" id="nameInput" placeholder="e.g. Ayesha Khan" maxlength="40" autocomplete="off" />
+              </div>
+              <div>
+                <label class="field-label" for="senderInput">From (your name)</label>
+                <input type="text" id="senderInput" placeholder="e.g. Ahmed" maxlength="40" autocomplete="off" />
+              </div>
+            </div>
+            <label class="field-label">Choose the occasion</label>
+            <div class="occ-grid" id="occGrid"></div>
+
+            <div class="controls-row" style="margin-top:20px;">
+              <div class="group">
+                <label class="field-label">Message style</label>
+                <div class="pill-row" id="toneRow">
+                  <button class="pill" data-tone="heartfelt">Heartfelt</button>
+                  <button class="pill active" data-tone="joyful">Joyful</button>
+                  <button class="pill" data-tone="funny">Funny</button>
+                  <button class="pill" data-tone="formal">Formal</button>
+                </div>
+              </div>
+              <div class="group">
+                <label class="field-label">Message language</label>
+                <div class="seg" id="langSeg">
+                  <button data-lang="en" class="active">English</button>
+                  <button data-lang="ur">Roman Urdu</button>
+                </div>
+              </div>
+              <div class="group">
+                <label class="field-label">Decoration style</label>
+                <div class="pill-row" id="decoRow">
+                  <button class="pill active" data-deco="auto">Auto mix</button>
+                  <button class="pill" data-deco="balloons">🎈 Balloons</button>
+                  <button class="pill" data-deco="hearts">💖 Hearts</button>
+                  <button class="pill" data-deco="floral">🌸 Flowers</button>
+                  <button class="pill" data-deco="butterflies">🦋 Butterflies</button>
+                  <button class="pill" data-deco="sparkle">✨ Sparkles</button>
+                  <button class="pill" data-deco="confetti">🎊 Confetti</button>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="panel panel-3d" aria-label="Step 2: pick a message">
+            <div class="step-head">
+              <span class="step-num">2</span>
+              <h2>Locked messages — tap to open</h2>
+              <p>Every message starts<br />sealed &amp; locked</p>
+            </div>
+            <div class="library-badge" id="libraryBadge" role="status">✦ <b>160+ ready messages</b> <span>— auto-selected for your occasion. Tap Fresh for a different set.</span></div>
+            <div class="msg-tools">
+              <button class="btn btn-primary" id="shuffleBtn" type="button">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3h5v5"/><path d="M4 20 21 3"/><path d="M21 16v5h-5"/><path d="m15 15 6 6"/><path d="M4 4l5 5"/></svg>
+                Fresh new messages
+              </button>
+              <button class="btn btn-ghost" id="unlockAllBtn" type="button">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 7.5-2"/></svg>
+                Unlock all
+              </button>
+              <button class="btn btn-ghost" id="lockAllBtn" type="button">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+                Lock again
+              </button>
+              <button class="btn btn-ghost" id="surpriseBtn" type="button">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"/></svg>
+                Surprise me
+              </button>
+            </div>
+            <p class="unlock-status" id="unlockStatus" role="status"></p>
+            <div class="msg-list" id="msgList"></div>
+          </section>
+        </div>
+
+        <div class="preview-col">
+          <section class="panel panel-3d" style="padding:20px;" aria-label="Step 3: your card">
+            <div class="step-head">
+              <span class="step-num">3</span>
+              <h2>Your card — in 3D</h2>
+              <p>Move over the card<br />to tilt it in 3D</p>
+            </div>
+            <div class="card-scene" id="cardScene">
+              <div class="tilt-wrap" id="tiltWrap">
+                <div class="card-shadow"></div>
+                <span class="float-chip c1" aria-hidden="true" style="font-size:34px;">🎈</span>
+                <span class="float-chip c2" aria-hidden="true" style="font-size:30px;">✨</span>
+                <span class="float-chip c3" aria-hidden="true" style="font-size:32px;">🎁</span>
+                <div class="canvas-frame">
+                  <canvas id="cardCanvas" width="1080" height="1350" aria-label="Preview of your greeting card"></canvas>
+                </div>
+                <div class="shine" id="cardShine"></div>
+              </div>
+            </div>
+            <div class="motion-row">
+              <button class="btn btn-ghost" id="flipBtn" type="button">↻ Flip card in 3D</button>
+              <button class="btn btn-ghost" id="celebrateBtn" type="button">🎉 Celebrate burst</button>
+              <button class="btn btn-ghost" id="motionToggleBtn" type="button" aria-pressed="true">3D Motion: ON</button>
+            </div>
+            <div class="design-tools">
+              <span class="design-count">18 designs</span>
+              <button class="btn btn-ghost" id="randomDesignBtn" type="button" style="padding:8px 13px;font-size:13.5px;">Random design</button>
+              <button class="btn btn-ghost" id="spinDesignBtn" type="button" style="padding:8px 13px;font-size:13.5px;">Spin designs</button>
+            </div>
+            <div class="swatch-row" id="swatchRow"></div>
+            <p class="theme-name" id="themeName"></p>
+            <div class="preview-actions">
+              <button class="btn btn-gold" id="downloadBtn" type="button">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m6.5 10.5 5.5 5.5 5.5-5.5"/><path d="M4 21h16"/></svg>
+                <span>Download picture<small>PNG image · ready to share</small></span>
+              </button>
+              <button class="btn btn-gift3d" id="downloadGiftBtn" type="button">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="9.5"/><path d="M12 11v9.5M3.5 7.5h17V11h-17Z"/><path d="M12 7.5C8.5 7.5 7.6 4 9.8 3.6c1.5-.3 2.2 1.7 2.2 3.9Zm0 0c3.5 0 4.4-3.5 2.2-3.9-1.5-.3-2.2 1.7-2.2 3.9Z"/></svg>
+                <span>Download 3D gift<small>Locked · tap to unlock</small></span>
+              </button>
+              <button class="btn btn-ghost btn-copy" id="copyMsgBtn" type="button">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                Copy message text
+              </button>
+            </div>
+            <p class="download-note"><strong>Picture</strong> = the finished card as an image, ready to share instantly. <strong>3D gift</strong> = a small file you send to them — it opens as a sealed, locked gift in 3D, and reveals your card the moment they tap to unlock it, with a confetti burst. The first download each visit asks for a quick human check, to keep bots away.</p>
+          </section>
+        </div>
+      </div>
+
+      <div class="how">
+        <div class="how-item">
+          <h3>1 · Name &amp; occasion</h3>
+          <p>Type the person's name and tap an occasion — birthday, wedding, anniversary, new baby, Eid, Diwali, Christmas and more.</p>
+        </div>
+        <div class="how-item">
+          <h3>2 · Tap a lock to reveal</h3>
+          <p>Every message starts sealed and locked, like a surprise gift. Tap one to open it — a fresh generator builds a new set every time from a huge pool of message parts, in English or Roman Urdu, so the same set almost never comes up twice. Each sealed wish also hides a different decoration style — balloons, hearts, flowers, butterflies, sparkles or confetti — and the card changes to match the wish you open (or pick one style for all of them).</p>
+        </div>
+        <div class="how-item">
+          <h3>3 · Pick a design &amp; download — two ways</h3>
+          <p>Choose from 18 gift-style designs — or spin for a random one — star your favourite message to keep it, then download both ways: <strong>Download picture</strong> for a high-quality PNG ready to share anywhere, or <strong>Download 3D gift</strong> for a locked gift file — send it to them, they tap the gift to unlock it in 3D and your card bursts out with confetti.</p>
+        </div>
+      </div>
+
+      <section class="security-strip" aria-label="How this page protects you">
+        <div class="sec-item">
+          <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 2.6v5.2c0 4.6-3 8.4-7 10.2-4-1.8-7-5.6-7-10.2V5.6Z"/><path d="m9 11.6 2.2 2.2L15.4 9.6"/></svg>Runs only on your device</h3>
+          <p>Names and messages are processed entirely in your browser and your downloads are created on your own device. Nothing you type is sent to a server — and there is no account or password on this page for anyone to steal.</p>
+        </div>
+        <div class="sec-item">
+          <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.6"/><path d="M5 20c.8-3.4 3.6-5 7-5s6.2 1.6 7 5"/></svg>Human check before downloads</h3>
+          <p>Your first download each visit asks for a quick human check — a tiny sum only a person bothers to solve. It stops bots and scripts from hammering the downloads, and downloads are also rate-limited.</p>
+        </div>
+        <div class="sec-item">
+          <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>Locked-down page &amp; links</h3>
+          <p>A strict content security policy blocks scripts and content from outside sources, and everything you type is rendered as plain text (never as code), so nothing typed into this page can turn into a script.</p>
+        </div>
+      </section>
+
+      <section class="seo-section" id="occasions" aria-labelledby="occasionsHeading">
+        <h2 id="occasionsHeading">Wishes for every occasion</h2>
+        <p class="lede">One free generator for every celebration of the year, with a library of 160+ ready-made messages that auto-select for the occasion you pick. For each occasion below, you get a fresh set of six sealed messages in Heartfelt, Joyful, Funny or Formal style — in English or Roman Urdu — and your favourite becomes a gift-style card in 18 designs, ready to download as a picture or as an interactive 3D gift. Tap any occasion to jump back to the generator and start.</p>
+        <div class="occ-seo-grid">
+          <article class="occ-seo">
+            <h3><a href="#occasions">Birthday Wishes</a></h3>
+            <p>Happy birthday messages that feel personal, not copied. Type their name and get birthday wishes for friends, family, kids and colleagues — sweet heartfelt lines, joyful party greetings or a funny birthday joke — sealed like a gift until you tap to open one, then printed on a balloon-decorated birthday card you can download and share.</p>
+          </article>
+          <article class="occ-seo">
+            <h3><a href="#occasions">Wedding Wishes</a></h3>
+            <p>Wedding wishes for the couple's big day — warm congratulations on their marriage, blessings for a lifetime of love, and elegant formal lines for a wedding card. Every wedding message is generated fresh with the couple's name, ready on a sparkling gift-style card for WhatsApp or print.</p>
+          </article>
+          <article class="occ-seo">
+            <h3><a href="#occasions">Anniversary Wishes</a></h3>
+            <p>Happy anniversary wishes for couples celebrating one year or fifty. Choose romantic heartfelt messages, cheerful joyful ones or a light funny line about married life, personalised with their names and finished with hearts on a choice of 18 card designs.</p>
+          </article>
+          <article class="occ-seo">
+            <h3><a href="#occasions">New Baby Wishes</a></h3>
+            <p>Welcome the little one with new baby wishes and congratulations for the new parents. Gentle, joyful messages for a baby boy or baby girl, written fresh for the baby's name and delivered as a star-decorated card the family will want to keep.</p>
+          </article>
+          <article class="occ-seo">
+            <h3><a href="#occasions">Congratulations Messages</a></h3>
+            <p>New job, promotion, exam results or a big win — congratulations messages for every success. Pick a proud heartfelt note, an upbeat joyful cheer or a formal well-done for a colleague, add their name, and download a confetti card in seconds.</p>
+          </article>
+          <article class="occ-seo">
+            <h3><a href="#occasions">Graduation Wishes</a></h3>
+            <p>Graduation wishes for the class of this year — messages that celebrate the hard work and wish them luck for what comes next. From proud and formal to fun and funny, each graduation card is personalised with the graduate's name and ready to share on their big day.</p>
+          </article>
+          <article class="occ-seo">
+            <h3><a href="#occasions">Eid Mubarak Wishes</a></h3>
+            <p>Eid Mubarak wishes for Eid al-Fitr and Eid al-Adha — warm greetings of blessings, health and happiness for family and friends, in English or Roman Urdu. Crescent-and-star decorated cards make your Eid greeting feel like a real gift, sealed until they tap to open it.</p>
+          </article>
+          <article class="occ-seo">
+            <h3><a href="#occasions">Diwali Wishes</a></h3>
+            <p>Happy Diwali wishes full of light — greetings of prosperity, health and new beginnings for the festival of lights. Send a diya-sparkled Diwali card with their name on it, as a picture for WhatsApp or as a locked 3D gift they open with a tap.</p>
+          </article>
+          <article class="occ-seo">
+            <h3><a href="#occasions">Christmas Wishes</a></h3>
+            <p>Merry Christmas wishes and festive greetings for family, friends and colleagues — cosy heartfelt messages, merry joyful ones and polite formal lines for office cards, all personalised with a name and finished with a snowy Christmas tree design.</p>
+          </article>
+          <article class="occ-seo">
+            <h3><a href="#occasions">New Year Wishes</a></h3>
+            <p>Happy New Year wishes to start January right — messages of fresh starts, success and good health for the year ahead. Firework-decorated cards, generated fresh for every name, make your New Year greeting stand out in every group chat.</p>
+          </article>
+          <article class="occ-seo">
+            <h3><a href="#occasions">Valentine's Day Wishes</a></h3>
+            <p>Valentine's Day wishes for the one you love — romantic heartfelt messages that say what is hard to say, or playful funny lines for your favourite person. Heart-decorated cards, sealed like a love letter until they tap to open.</p>
+          </article>
+          <article class="occ-seo">
+            <h3><a href="#occasions">Thank You Messages</a></h3>
+            <p>Thank you messages that sound sincere, not automatic — for teachers, friends, family, hosts and anyone who helped you. Write their name, pick a grateful message in a style that fits, and send a flower-decorated thank-you card they will remember.</p>
+          </article>
+          <article class="occ-seo">
+            <h3><a href="#occasions">Good Luck Wishes</a></h3>
+            <p>Good luck wishes for exams, interviews, new jobs and big journeys — encouraging messages that calm nerves and lift spirits, personalised with their name and a lucky-clover card design, ready to send before the big moment.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="seo-section" id="faq" aria-labelledby="faqHeading">
+        <h2 id="faqHeading">Frequently asked questions</h2>
+        <p class="lede">Quick answers about making, downloading and sharing your wish cards.</p>
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>Is the Wishes Card Generator free?</summary>
+            <p>Yes — completely free. There is no sign-up, no account and nothing to install. Type a name, choose an occasion, unlock a message and download your card, all in your browser.</p>
+          </details>
+          <details class="faq-item">
+            <summary>How do I download my card as a picture?</summary>
+            <p>Type the person's name, pick an occasion, tap a sealed message to unlock it, choose one of the 18 designs, then press <strong>Download picture</strong>. You get a high-quality PNG image that is ready to share on WhatsApp, Facebook or anywhere else. The first download of each visit asks for a quick human check to keep bots away.</p>
+          </details>
+          <details class="faq-item">
+            <summary>What is the 3D gift download, and how does the recipient unlock it?</summary>
+            <p><strong>Download 3D gift</strong> saves a small interactive gift file instead of a picture. Send that file to the person — when they open it, they see a sealed, floating 3D gift box with their name on it, and your message stays hidden. They tap the gift, the lid flies off with a confetti burst, and your card flips open in 3D. They can even lock it again and replay the surprise.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Can I get wishes in Roman Urdu?</summary>
+            <p>Yes. Use the <strong>Message language</strong> switch in Step 1 to choose Roman Urdu — messages are then written in easy-to-read Roman Urdu (Urdu in Latin letters), perfect for WhatsApp. English is available too, in Heartfelt, Joyful, Funny and Formal styles.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Are the messages really different every time?</summary>
+            <p>The generator builds each set of six messages from a very large pool of openings, middles and endings for every occasion and style, and never repeats a line inside one set. That makes the exact same set coming up twice extremely unlikely — virtually never.</p>
+          </details>
+          <details class="faq-item">
+            <summary>How many ready-made messages are there, and how do they auto-select?</summary>
+            <p>There are 160+ ready-made messages in the library, plus the fresh generator. Just pick an occasion — Birthday, Wedding, Anniversary, Eid and the rest — and that occasion's messages are automatically loaded as sealed cards in Step 2. Tap <strong>Fresh new messages</strong> to rotate to a different set from the same occasion's library.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Which occasions are covered?</summary>
+            <p>Thirteen occasions: Birthday, Wedding, Anniversary, New Baby, Congratulations, Graduation, Eid Mubarak, Diwali, Christmas, New Year, Valentine's Day, Thank You and Good Luck — each with its own messages, headline and decoration style. See <a href="#occasions">wishes for every occasion</a> above.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Is my name or message sent anywhere?</summary>
+            <p>No. Everything runs on your own device: names and messages are processed in your browser and your picture and 3D gift downloads are created locally. Nothing you type is sent to a server, and there is no account or password on this page.</p>
+          </details>
+        </div>
+      </section>
+
+      <footer class="site-footer">
+        <p class="foot-brand">Wishes Card Generator</p>
+        <p>Free wishes card generator for birthdays, weddings, anniversaries and festivals. Type a name, unlock a sealed gift-style message in English or Roman Urdu, and download your card as a picture or an interactive 3D gift — made for sharing smiles on WhatsApp, Facebook and everywhere else.</p>
+        <nav class="foot-links" aria-label="Footer">
+          <a href="#occasions">All occasions</a>
+          <a href="#faq">FAQ</a>
+          <a href="mailto:bw2747675@gmail.com">Contact us</a>
+        </nav>
+        <p class="foot-contact">Contact us: <a href="mailto:bw2747675@gmail.com">bw2747675@gmail.com</a></p>
+        <p class="foot-note">Cards are created on your own device — nothing you type is sent to a server.</p>
+      </footer>
+    </div>
+
+    <div class="verify-backdrop" id="verifyBackdrop" hidden>
+      <div class="verify-box" id="verifyBox" role="dialog" aria-modal="true" aria-labelledby="verifyTitle">
+        <div class="verify-shield" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 2.6v5.2c0 4.6-3 8.4-7 10.2-4-1.8-7-5.6-7-10.2V5.6Z"/><path d="m9 11.6 2.2 2.2L15.4 9.6"/></svg></div>
+        <h3 id="verifyTitle">Quick human check</h3>
+        <p>Downloads are protected so bots and scripts can't abuse them. Solve this tiny sum to continue:</p>
+        <p class="verify-q" id="verifyQ"></p>
+        <div class="verify-opts" id="verifyOpts"></div>
+        <p class="verify-note" id="verifyNote"></p>
+        <button class="btn btn-ghost verify-cancel" id="verifyCancel" type="button">Cancel</button>
+      </div>
+    </div>
+
+    <div class="toast" id="toast" role="status"></div>
+
+    <script>
+    "use strict";
+
+    var ICONS = {
+      cake: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21v-7h14v7"/><path d="M5 14c1.7 1.3 3.3-1.3 5 0 1.7 1.3 3.3-1.3 5 0 1.2 1 2.7 1 4 0"/><path d="M8.5 10.5V8M12 10.5V7M15.5 10.5V8"/><circle cx="8.5" cy="6" r="1" fill="currentColor" stroke="none"/><circle cx="12" cy="5" r="1" fill="currentColor" stroke="none"/><circle cx="15.5" cy="6" r="1" fill="currentColor" stroke="none"/></svg>',
+      rings: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="14.5" r="5.5"/><circle cx="15.5" cy="14.5" r="5.5"/><path d="M12.2 2.6 14.3 5.4 12.2 8.2 10.1 5.4Z"/></svg>',
+      heart: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20.5C7 16.6 3.5 13.4 3.5 9.7 3.5 7 5.5 5 8 5c1.6 0 3.1.8 4 2.1C12.9 5.8 14.4 5 16 5c2.5 0 4.5 2 4.5 4.7 0 3.7-3.5 6.9-8.5 10.8Z"/></svg>',
+      heartFill: '<svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 20.5C7 16.6 3.5 13.4 3.5 9.7 3.5 7 5.5 5 8 5c1.6 0 3.1.8 4 2.1C12.9 5.8 14.4 5 16 5c2.5 0 4.5 2 4.5 4.7 0 3.7-3.5 6.9-8.5 10.8Z"/></svg>',
+      star: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8L3.5 9.7l5.9-.8Z"/></svg>',
+      trophy: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4h10v5a5 5 0 0 1-10 0V4Z"/><path d="M7 5.5H4a3 3 0 0 0 3.2 4M17 5.5h3a3 3 0 0 1-3.2 4"/><path d="M12 14v3"/><path d="M8.5 20.5h7M12 17v3.5"/></svg>',
+      cap: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5 2.5 9.5 12 14l9.5-4.5Z"/><path d="M6.5 11.8V16c0 1.6 2.5 3 5.5 3s5.5-1.4 5.5-3v-4.2"/><path d="M21.5 9.5V15"/></svg>',
+      moon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19.5 15A8.5 8.5 0 1 1 9 4.5a7 7 0 0 0 10.5 10.5Z"/><path d="M17.5 3.2l.8 1.7 1.9.3-1.4 1.3.3 1.9-1.6-1-1.6 1 .3-1.9-1.4-1.3 1.9-.3Z" fill="currentColor" stroke="none"/></svg>',
+      diya: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 13.5h17c0 3.6-3.8 6-8.5 6s-8.5-2.4-8.5-6Z"/><path d="M12 10.8c-1.3-1.5-1.3-3.2 0-5 1.3 1.8 1.3 3.5 0 5Z" fill="currentColor" stroke="none"/><path d="M8 21.5h8"/></svg>',
+      tree: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l4.5 6h-2.6L17 13.5H7L10.1 9H7.5Z"/><path d="M12 13.5V18"/><path d="M8.5 21.5h7M12 18v3.5"/></svg>',
+      firework: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 11V3.5M12.8 11.8l5.3-5.3M13 12.8h7.5M12.8 13.2l5.3 5.3M11.2 13.2l-5.3 5.3M11 12.8H3.5M11.2 11.8 5.9 6.5"/><circle cx="12" cy="12.4" r="1.3" fill="currentColor" stroke="none"/></svg>',
+      flower: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="5.8" r="2.7"/><circle cx="17.6" cy="9.9" r="2.7"/><circle cx="15.5" cy="16.2" r="2.7"/><circle cx="8.5" cy="16.2" r="2.7"/><circle cx="6.4" cy="9.9" r="2.7"/><circle cx="12" cy="11" r="2" fill="currentColor" stroke="none"/></svg>',
+      clover: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="9" cy="9" r="3.1"/><circle cx="15" cy="9" r="3.1"/><circle cx="9" cy="15" r="3.1"/><circle cx="15" cy="15" r="3.1"/><path d="M12 12.5c.2 3.5-.6 6-2.5 8.5"/></svg>',
+      gift: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="9.5"/><path d="M12 11v9.5M3.5 7.5h17V11h-17Z"/><path d="M12 7.5C8.5 7.5 7.6 4 9.8 3.6c1.5-.3 2.2 1.7 2.2 3.9Zm0 0c3.5 0 4.4-3.5 2.2-3.9-1.5-.3-2.2 1.7-2.2 3.9Z"/></svg>'
+    };
+
+    var OCCASIONS = [
+      { id:"birthday", label:"Birthday", icon:"cake", headline:"Happy Birthday", tag:"Birthday Wishes", deco:"balloons" },
+      { id:"wedding", label:"Wedding", icon:"rings", headline:"Happy Wedding", tag:"Wedding Wishes", deco:"sparkle" },
+      { id:"anniversary", label:"Anniversary", icon:"heart", headline:"Happy Anniversary", tag:"Anniversary Wishes", deco:"hearts" },
+      { id:"baby", label:"New Baby", icon:"star", headline:"Welcome, Little One", tag:"New Baby Wishes", deco:"stars" },
+      { id:"congrats", label:"Congratulations", icon:"trophy", headline:"Congratulations", tag:"Congratulations", deco:"confetti" },
+      { id:"graduation", label:"Graduation", icon:"cap", headline:"Happy Graduation", tag:"Graduation Wishes", deco:"confetti" },
+      { id:"eid", label:"Eid Mubarak", icon:"moon", headline:"Eid Mubarak", tag:"Eid Wishes", deco:"moon" },
+      { id:"diwali", label:"Diwali", icon:"diya", headline:"Happy Diwali", tag:"Diwali Wishes", deco:"sparkle" },
+      { id:"christmas", label:"Christmas", icon:"tree", headline:"Merry Christmas", tag:"Christmas Wishes", deco:"snow" },
+      { id:"newyear", label:"New Year", icon:"firework", headline:"Happy New Year", tag:"New Year Wishes", deco:"firework" },
+      { id:"valentine", label:"Valentine's", icon:"heartFill", headline:"Happy Valentine's Day", tag:"Valentine Wishes", deco:"hearts" },
+      { id:"thanks", label:"Thank You", icon:"flower", headline:"Thank You", tag:"With Gratitude", deco:"floral" },
+      { id:"goodluck", label:"Good Luck", icon:"clover", headline:"Good Luck", tag:"Good Luck Wishes", deco:"stars" }
+    ];
+
+    var MESSAGES = {
+      birthday: {
+        en: {
+          heartfelt: [
+            "Happy Birthday, {name}! May your year ahead be filled with good health, deep laughter, and every little thing that makes your heart feel at home.",
+            "Wishing you the happiest of birthdays, {name}. You make ordinary days brighter just by being in them — today, we celebrate you.",
+            "Dear {name}, on your special day I just want you to know how grateful I am for you. May this year return to you all the kindness you give to others."
+          ],
+          joyful: [
+            "It's your day, {name}! Cake, candles and a whole lot of celebrating — may your birthday be as wonderful and as fun as you are. Happy Birthday!",
+            "Happy Birthday, {name}! Another year bolder, wiser and even more amazing. Let the party begin!",
+            "Hip hip hooray — it's {name}'s birthday! Wishing you a day stuffed with surprises, sweet treats and people who adore you."
+          ],
+          funny: [
+            "Happy Birthday, {name}! You're not getting older, you're becoming a classic — limited edition, slightly vintage, totally priceless.",
+            "Congratulations, {name} — you've officially levelled up! Your gift is my presence. You're welcome. Happy Birthday!",
+            "Happy Birthday, {name}! Age is just a number… and in your case, a really well-kept secret."
+          ],
+          formal: [
+            "Warm birthday wishes to you, {name}. May the coming year bring you continued success, good health and happiness in all that you do.",
+            "Please accept my sincere birthday greetings, {name}. Wishing you a year of achievement and contentment ahead.",
+            "Many happy returns of the day, {name}. It is a pleasure to celebrate someone so valued and respected."
+          ]
+        },
+        ur: [
+          "Salgirah Mubarak, {name}! Allah aap ko lambi umar, sehat aur dher saari khushiyan ata farmaye. Aap ka har din pichle din se behtar ho.",
+          "Happy Birthday {name}! Aaj ka din sirf aap ka hai — cake bhi katega, duaen bhi milengi. Hamesha yunhi muskurate rahen!",
+          "{name}, aap ko salgirah ki bohat bohat mubarakbad. Aap jese log zindagi ko khoobsurat bana dete hain.",
+          "Janamdin Mubarak, {name}! Naya saal aap ke liye kamyabi, mohabbat aur sakoon lekar aye. Ameen."
+        ]
+      },
+      wedding: {
+        en: {
+          heartfelt: [
+            "Congratulations, {name}! May your marriage be built on laughter, patience and a love that grows deeper with every passing year.",
+            "To a beautiful couple — {name}, may your life together be a story worth telling again and again. Wishing you a lifetime of love and happiness."
+          ],
+          joyful: [
+            "It's official, {name} — you found your forever! Here's to love, laughter and happily ever after. Congratulations on your wedding!",
+            "What a joyous day, {name}! Two hearts, one beautiful journey. Wishing you both endless adventures together."
+          ],
+          funny: [
+            "Congratulations, {name}! Marriage is a workshop — one works, the other shops. Wishing you both a lifetime of love and happy compromise!",
+            "{name}, you did it — you found someone willing to share their fries forever. That is true love. Congratulations!"
+          ],
+          formal: [
+            "Heartfelt congratulations on your wedding, {name}. May your union be blessed with harmony, prosperity and enduring love.",
+            "Please accept my warmest wishes on this joyous occasion, {name}. Wishing you and your partner a lifetime of happiness together."
+          ]
+        },
+        ur: [
+          "Shaadi Mubarak, {name}! Allah aap dono ko zindagi bhar ki khushiyan, mohabbat aur barkat ata farmaye.",
+          "{name}, aap ko is nayi zindagi ki shuruaat par dil se mubarakbad. Allah aap ke ghar ko hamesha abaad rakhe.",
+          "Mubarak ho {name}! Dua hai ke aap dono ka saath hamesha yunhi pyaar aur sukh se bhara rahe."
+        ]
+      },
+      anniversary: {
+        en: {
+          heartfelt: [
+            "Happy Anniversary, {name}! Every year together is a favourite chapter. Here's to all the memories behind us and the beautiful ones still to come.",
+            "{name}, love like yours gets sweeter with time. Happy anniversary — may your bond keep growing stronger, year after year."
+          ],
+          joyful: [
+            "Another year of love, laughter and togetherness — Happy Anniversary, {name}! Let's celebrate everything you've built together.",
+            "Cheers to you, {name}! Another year down, a lifetime to go. Happy Anniversary!"
+          ],
+          funny: [
+            "Happy Anniversary, {name}! Still together after all this time — that's basically a miracle worth celebrating.",
+            "{name}, you've been together so long you finish each other's sentences AND each other's snacks. Happy Anniversary, favourite duo!"
+          ],
+          formal: [
+            "Warmest wishes on your anniversary, {name}. May your bond continue to strengthen with each passing year.",
+            "Congratulations on another year of togetherness, {name}. Wishing you many more years of shared happiness."
+          ]
+        },
+        ur: [
+          "Shaadi ki Salgirah Mubarak, {name}! Allah aap ke rishtay ko hamesha mohabbat aur barkat se bhara rakhe.",
+          "Happy Anniversary {name}! Har guzarta saal aap ki mohabbat ko aur gehra kare, yehi dua hai.",
+          "{name}, aap ki jodi hamesha salamat rahe. Anniversary ki dil se mubarakbad!"
+        ]
+      },
+      baby: {
+        en: {
+          heartfelt: [
+            "Welcome to the world, little one! Congratulations, {name} — may your baby's life be filled with health, love and endless wonder."
+          ],
+          joyful: [
+            "A tiny miracle has arrived! Huge congratulations, {name}. Wishing your family a lifetime of precious firsts and happy cuddles."
+          ],
+          funny: [
+            "Congratulations, {name}! Sleep is now a fond memory — but that little face will make every yawn worth it. Welcome, baby!"
+          ],
+          formal: [
+            "Sincere congratulations on the arrival of your baby, {name}. Wishing your family health, happiness and many cherished moments."
+          ]
+        },
+        ur: [
+          "Mubarak ho {name}! Allah ne aap ko apni sab se khoobsurat nemat se nawaza hai. Allah bache ko sehat, lambi umar aur nek nasib ata farmaye.",
+          "Chhoti si jaan, bara sa tohfa! {name}, aap ko nannay mehman ki bohat bohat mubarakbad."
+        ]
+      },
+      congrats: {
+        en: {
+          heartfelt: [
+            "Congratulations, {name}! Your hard work and dedication have truly paid off. This success is so well deserved — and it's only the beginning."
+          ],
+          joyful: [
+            "You did it, {name}! Time to pop the confetti — this achievement calls for a serious celebration. So proud of you!"
+          ],
+          funny: [
+            "Well well, {name} — look at you, succeeding and showing off again. Seriously though, congratulations, superstar!"
+          ],
+          formal: [
+            "Please accept my heartfelt congratulations, {name}. Your accomplishment is a testament to your talent and perseverance."
+          ]
+        },
+        ur: [
+          "Bohat bohat mubarak ho {name}! Aap ki mehnat rang lai hai. Allah aap ko aur bari kamyabiyan ata farmaye.",
+          "Kamyabi Mubarak, {name}! Aaj ka din aap ki mehnat ka sab se khoobsurat saboot hai."
+        ]
+      },
+      graduation: {
+        en: {
+          heartfelt: [
+            "Congratulations, graduate! {name}, the tassel was worth the hassle. May this be the first of many milestones on your remarkable journey."
+          ],
+          joyful: [
+            "Caps off to you, {name}! You studied, you stressed, you succeeded — now go conquer the world. Happy Graduation!"
+          ],
+          funny: [
+            "Congrats, {name}! You now officially know a lot about a little… and the real lessons begin. Welcome to adulthood!"
+          ],
+          formal: [
+            "Warmest congratulations on your graduation, {name}. Wishing you every success as you begin this exciting new chapter."
+          ]
+        },
+        ur: [
+          "Graduation Mubarak, {name}! Aap ne kar dikhaya. Allah aap ke mustaqbil ko roshan aur kamyabi se bhara rakhe.",
+          "Mubarak ho {name}! Degree mil gayi, ab duniya aap ki muntazir hai. Bohat si duaen!"
+        ]
+      },
+      eid: {
+        en: {
+          heartfelt: [
+            "Eid Mubarak, {name}! May Allah accept your prayers and fasts, and fill your home with peace, prosperity and joy."
+          ],
+          joyful: [
+            "Chaand Mubarak, {name}! Time for sheer khurma, new clothes and Eidi — wishing you the happiest Eid ever!"
+          ],
+          funny: [
+            "Eid Mubarak, {name}! May your Eidi be heavy, your plates be full and your afternoon nap be completely uninterrupted."
+          ],
+          formal: [
+            "Eid greetings to you and your family, {name}. May this blessed occasion bring you happiness and good fortune."
+          ]
+        },
+        ur: [
+          "Eid Mubarak, {name}! Allah aap ki ibadaton ko qabool farmaye aur aap ke ghar mein khushiyon ki barish ho.",
+          "Chaand Raat aur Eid ki bohat mubarak, {name}! Allah aap ko sehat, sakoon aur barkat ata farmaye."
+        ]
+      },
+      diwali: {
+        en: {
+          heartfelt: [
+            "Happy Diwali, {name}! May the light of the diyas guide you to happiness, prosperity and a year full of bright new beginnings."
+          ],
+          joyful: [
+            "Wishing you a Diwali sparkling with joy, {name}! May your home glow with laughter and your heart with light."
+          ],
+          funny: [
+            "Happy Diwali, {name}! May your sweets be endless, your crackers loud and your relatives' questions minimal."
+          ],
+          formal: [
+            "Warm Diwali greetings to you and your family, {name}. May the festival of lights illuminate your path to success."
+          ]
+        },
+        ur: [
+          "Diwali Mubarak, {name}! Roshniyon ka ye tyohar aap ki zindagi mein khushiyan aur kamyabi lekar aye.",
+          "{name}, aap ko aur aap ke ghar walon ko Diwali ki dil se mubarakbad. Har diya aap ke liye nayi umeed jalaye."
+        ]
+      },
+      christmas: {
+        en: {
+          heartfelt: [
+            "Merry Christmas, {name}! May your home be filled with warmth, your heart with peace and your year with blessings."
+          ],
+          joyful: [
+            "Ho ho ho — Merry Christmas, {name}! Wishing you twinkling lights, too much food and all the people you love in one room."
+          ],
+          funny: [
+            "Merry Christmas, {name}! May your gifts be amazing and your family gatherings completely drama-free (we can dream)."
+          ],
+          formal: [
+            "Season's greetings, {name}. Wishing you a joyful Christmas and a prosperous New Year ahead."
+          ]
+        },
+        ur: [
+          "Christmas Mubarak, {name}! Allah aap ko aur aap ke ghar walon ko khushiyan aur aman ata farmaye.",
+          "Merry Christmas {name}! Ye mosam aap ke liye mohabbat, sakoon aur dher saari khushiyan lekar aye."
+        ]
+      },
+      newyear: {
+        en: {
+          heartfelt: [
+            "Happy New Year, {name}! May the year ahead bring you new hope, good health and moments that turn into treasured memories."
+          ],
+          joyful: [
+            "New year, new adventures, {name}! Here's to 365 fresh pages — let's make this your best chapter yet."
+          ],
+          funny: [
+            "Happy New Year, {name}! My resolution is to keep being this amazing friend. You're welcome, in advance."
+          ],
+          formal: [
+            "Wishing you a happy and prosperous New Year, {name}. May the coming year reward your efforts and fulfil your ambitions."
+          ]
+        },
+        ur: [
+          "Naya Saal Mubarak, {name}! Allah karay ye saal aap ke liye kamyabi, sehat aur khushiyon ka saal ho.",
+          "Happy New Year {name}! Purani pareshaniyan peeche, nayi umeedein aage — bohat si duaen aap ke liye."
+        ]
+      },
+      valentine: {
+        en: {
+          heartfelt: [
+            "Happy Valentine's Day, {name}. In a world of billions, my favourite place will always be beside you. Thank you for being my heart's home."
+          ],
+          joyful: [
+            "Be mine, {name}? Every love story is beautiful, but yours is my favourite. Happy Valentine's Day!"
+          ],
+          funny: [
+            "Happy Valentine's, {name}! I love you more than pizza — and you know that means everything."
+          ],
+          formal: [
+            "Wishing you a Valentine's Day filled with love and appreciation, {name}. You are truly cherished."
+          ]
+        },
+        ur: [
+          "Happy Valentine's Day, {name}! Tum meri zindagi ki sab se khoobsurat wajah ho muskurane ki.",
+          "{name}, mohabbat ka din mubarak! Dua hai hamara saath hamesha yunhi kayam rahe."
+        ]
+      },
+      thanks: {
+        en: {
+          heartfelt: [
+            "Thank you, {name}. Your kindness came exactly when it was needed most, and it will never be forgotten. I'm truly grateful for you."
+          ],
+          joyful: [
+            "You're simply the best, {name}! Thank you for everything — the big, the small and all the things in between."
+          ],
+          funny: [
+            "Thanks, {name}! I owe you one. Actually, I owe you several. You're officially my favourite human."
+          ],
+          formal: [
+            "Please accept my sincere gratitude, {name}. Your support and generosity are deeply appreciated."
+          ]
+        },
+        ur: [
+          "Bohat shukriya, {name}! Aap ki madad aur mohabbat hamesha yaad rahegi. Allah aap ko is ka behtareen ajar de.",
+          "{name}, dil se shukriya! Aap jese log zindagi ko asaan aur khoobsurat bana dete hain."
+        ]
+      },
+      goodluck: {
+        en: {
+          heartfelt: [
+            "Good luck, {name}! You've prepared, you've worked hard — now trust yourself. I'm cheering for you every step of the way."
+          ],
+          joyful: [
+            "Go get it, {name}! Luck is on your side and so am I. This is your moment — shine bright!"
+          ],
+          funny: [
+            "Good luck, {name}! I'd say break a leg, but let's keep all bones intact. You've got this!"
+          ],
+          formal: [
+            "Best wishes for success, {name}. May your efforts be rewarded with the outcome you truly deserve."
+          ]
+        },
+        ur: [
+          "Best of luck, {name}! Allah aap ko kamyabi ata farmaye. Poori mehnat, poora yaqeen — jeet aap ki hai.",
+          "{name}, bohat si duaen aap ke saath hain. Allah aap ke liye asaaniyan paida farmaye."
+        ]
+      }
+    };
+
+    var EXTRA = {
+      wedding: {
+        heartfelt: ["Wishing you both a marriage full of quiet mornings, shared dreams and a love that always finds its way home. Congratulations, {name}."],
+        joyful: ["The wedding was just the beginning, {name} — now comes the best part: a whole lifetime of celebrations together. Congratulations!"],
+        funny: ["Congratulations, {name}! Pro tip: 'You're right, dear' — learn it, live it, love it. Wishing you a very happy marriage."],
+        formal: ["With warm congratulations on your marriage, {name}. May your life together be marked by mutual respect, joy and prosperity."]
+      },
+      anniversary: {
+        heartfelt: ["Another year, another reason to be thankful for you, {name}. Happy anniversary — my heart chose well."],
+        joyful: ["Happy Anniversary, {name}! Still laughing together after all this time — that's the real happily ever after."],
+        funny: ["Happy Anniversary, {name}! Marriage is when dating goes pro — and you two are clearly league champions."],
+        formal: ["Please accept my warmest anniversary wishes, {name}. May the years ahead be as rewarding as those behind you."]
+      },
+      baby: {
+        heartfelt: [
+          "Congratulations, {name}, on your precious new arrival. May your baby grow up surrounded by love, laughter and every blessing life can offer.",
+          "A new baby changes everything — in the best possible way. Congratulations, {name}. Wishing your little one a life as beautiful as this moment."
+        ],
+        joyful: [
+          "Tiny hands, tiny feet and a whole lot of love! Congratulations, {name} — life just got a whole lot cuter.",
+          "The stork has officially delivered happiness to your door, {name}! Congratulations on your gorgeous new baby."
+        ],
+        funny: [
+          "Congrats, {name}! Your new boss has arrived — works nights, pays in smiles and never accepts excuses. Enjoy every minute!",
+          "Welcome to parenthood, {name}: where sleeping in now means 7 a.m. and silence is always suspicious. Congratulations!"
+        ],
+        formal: [
+          "Warmest congratulations on the birth of your child, {name}. May your family be blessed with health and happiness in the years ahead.",
+          "It is with great joy that we congratulate you, {name}, on your new arrival. Wishing baby and family every blessing."
+        ]
+      },
+      congrats: {
+        heartfelt: [
+          "So proud of you, {name}. Behind this success are late nights, hard choices and quiet determination — and it has all been worth it.",
+          "Congratulations, {name}! May this achievement be the first of many, and may you always be celebrated the way you deserve."
+        ],
+        joyful: [
+          "Big news, big celebration — congratulations, {name}! You set a goal, chased it down and absolutely smashed it.",
+          "Raise a glass to {name}! Success looks good on you. Congratulations on a job brilliantly done."
+        ],
+        funny: [
+          "Congratulations, {name}! Please remember us little people when you're famous. Autographs accepted now, while they're still free.",
+          "{name}, you did the thing! All that hard work and only modest amounts of panic. Congratulations, legend."
+        ],
+        formal: [
+          "Congratulations on this outstanding achievement, {name}. Your dedication sets a standard others would do well to follow.",
+          "It gives me great pleasure to congratulate you, {name}. May this success open doors to even greater opportunities."
+        ]
+      },
+      graduation: {
+        heartfelt: [
+          "Dear {name}, watching you reach this day has been a privilege. Congratulations on your graduation — the future is wide open and waiting for you.",
+          "Congratulations, {name}. Every late night and early morning led to this moment. Be proud — you've earned every bit of it."
+        ],
+        joyful: [
+          "School's out and the future is in, {name}! Congratulations, graduate — time to celebrate like you mean it.",
+          "You came, you learned, you conquered, {name}! Happy graduation — now let's party like there's no exam tomorrow."
+        ],
+        funny: [
+          "Congrats, {name}! You've graduated with honours in surviving group projects and last-minute deadlines. The degree is a bonus.",
+          "{name}, congratulations! You are now qualified to search the internet professionally. Go forth and shine."
+        ],
+        formal: [
+          "Sincere congratulations on your graduation, {name}. May your knowledge and character carry you to great heights.",
+          "Congratulations, {name}. Wishing you distinction and success in all your future endeavours."
+        ]
+      },
+      eid: {
+        heartfelt: [
+          "Eid Mubarak, {name}. After a month of patience and prayer, may your heart be light, your table full and your loved ones near.",
+          "Wishing you a blessed Eid, {name}. May Allah reward your devotion and grant you a year of mercy, health and barakah."
+        ],
+        joyful: [
+          "Eid Mubarak, {name}! New clothes on, smile on, Eidi incoming — have the most wonderful celebration!",
+          "The moon has been sighted and the feast is on, {name}! Eid Mubarak — eat well, laugh lots, hug everyone."
+        ],
+        funny: [
+          "Eid Mubarak, {name}! Calories don't count today, naps are mandatory, and yes — you may ask for Eidi twice.",
+          "{name}, Eid Mubarak! May your Eidi exceed expectations and your biryani portion embarrass the serving spoon."
+        ],
+        formal: [
+          "Eid Mubarak to you and your family, {name}. May this occasion bring renewed faith, prosperity and peace.",
+          "Please accept my warm Eid greetings, {name}. Wishing you and your loved ones health and happiness throughout the year."
+        ]
+      },
+      diwali: {
+        heartfelt: [
+          "Happy Diwali, {name}. May your home be blessed with prosperity, and may every diya you light chase away a worry.",
+          "Wishing you a Diwali filled with light in every sense, {name} — light in your home, your heart and your path ahead."
+        ],
+        joyful: [
+          "It's Diwali, {name}! Sweets, sparkles and brand-new beginnings — have the brightest celebration ever.",
+          "Light the diyas and let the good times glow, {name}! Happy Diwali to you and everyone you love."
+        ],
+        funny: [
+          "Happy Diwali, {name}! May your mithai box never empty and your 'just one more sweet' always be true.",
+          "{name}, Happy Diwali! Warning: excessive ladoos may cause extreme happiness. Proceed anyway."
+        ],
+        formal: [
+          "Wishing you and your family a prosperous Diwali, {name}. May the year ahead be marked by success and good health.",
+          "Warm greetings on the occasion of Diwali, {name}. May the festival bring light, peace and prosperity to your home."
+        ]
+      },
+      christmas: {
+        heartfelt: [
+          "Merry Christmas, {name}. May the spirit of the season — love, giving and gratitude — stay with you all year long.",
+          "Wishing you a gentle, joyful Christmas, {name}. May you be surrounded by the people who make life feel like a gift."
+        ],
+        joyful: [
+          "Jingle all the way, {name}! Merry Christmas — may your day be merry, bright and full of treats.",
+          "It's the most wonderful time of the year, {name}! Wishing you carols, cocoa and a tree full of presents."
+        ],
+        funny: [
+          "Merry Christmas, {name}! Santa saw your search history and still brought gifts. That's true Christmas spirit.",
+          "{name}, Merry Christmas! May your presents be thoughtful and your wrapping last longer than your patience."
+        ],
+        formal: [
+          "Wishing you a peaceful Christmas, {name}, and every success in the New Year.",
+          "Warm Christmas greetings to you and your family, {name}. May the season bring you rest, joy and renewal."
+        ]
+      },
+      newyear: {
+        heartfelt: [
+          "Happy New Year, {name}. Whatever last year held, you made it through — and that alone is worth celebrating. Here's to brighter days.",
+          "Wishing you a year of quiet wins and loud celebrations, {name}. Happy New Year — may it be kind to you."
+        ],
+        joyful: [
+          "3… 2… 1… Happy New Year, {name}! Let the confetti fly — this is going to be your year.",
+          "Cheers to a brand-new beginning, {name}! New year, fresh dreams, same wonderful you — only upgraded."
+        ],
+        funny: [
+          "Happy New Year, {name}! This year my gym membership and I have agreed to see other people. Wishing you better resolutions.",
+          "{name}, Happy New Year! May your resolutions last longer than your phone battery — low bar, high hopes."
+        ],
+        formal: [
+          "Wishing you health, prosperity and success in the New Year, {name}. It is a pleasure to begin another year alongside you.",
+          "Please accept my best wishes for the New Year, {name}. May it bring accomplishment in your work and happiness at home."
+        ]
+      },
+      valentine: {
+        heartfelt: [
+          "To {name}, on Valentine's Day: you are loved more than words on any card could ever say. Thank you for every day you make brighter.",
+          "Happy Valentine's Day, {name}. Loving you was never a choice — it was simply the best thing that ever happened."
+        ],
+        joyful: [
+          "Roses are red, violets are blue, every day is better because of you, {name}! Happy Valentine's Day!",
+          "You plus me plus a perfect day — that's my kind of Valentine's, {name}. Let's make it unforgettable!"
+        ],
+        funny: [
+          "{name}, you're the peanut butter to my jelly — a little nutty, totally stuck with me. Happy Valentine's!",
+          "Happy Valentine's, {name}! I was going to write a poem, but you already make my heart do weird things. Close enough."
+        ],
+        formal: [
+          "Wishing you a Valentine's Day as lovely as you are, {name}. With admiration and warmest regards.",
+          "On this Valentine's Day, {name}, please know you are appreciated more than words can express."
+        ]
+      },
+      thanks: {
+        heartfelt: [
+          "{name}, some people help and move on — you stayed, you cared, you changed things. Thank you, from the bottom of my heart.",
+          "Words feel small today, {name}, but please hear them anyway: thank you. Your generosity will stay with me for a long time."
+        ],
+        joyful: [
+          "Three cheers for {name}! Thank you for being the kind of person who makes the world noticeably better.",
+          "If gratitude were confetti, you'd be covered in it, {name}. Thank you for everything!"
+        ],
+        funny: [
+          "Thank you, {name}! You're officially on my 'save first in an emergency' list — right after snacks.",
+          "{name}, thanks a million. (Payment in gratitude only; the million is not included.) Seriously — you're a star."
+        ],
+        formal: [
+          "I wish to express my sincere appreciation, {name}, for your assistance and kindness. It has been invaluable.",
+          "Thank you for your support, {name}. Your professionalism and generosity are held in the highest regard."
+        ]
+      },
+      goodluck: {
+        heartfelt: [
+          "{name}, whatever happens next, remember how far you've already come. Good luck — you carry my best wishes with you.",
+          "Wishing you calm nerves and a clear mind, {name}. Good luck — everything you've worked for is within reach."
+        ],
+        joyful: [
+          "This is it, {name} — your big moment! Sending you all the luck, energy and good vibes in the world.",
+          "Luck, check. Talent, check. {name}, you're unstoppable — go show them how it's done!"
+        ],
+        funny: [
+          "Good luck, {name}! Worst case, it's a funny story for later. Best case, you're a legend. Win-win.",
+          "{name}, I've crossed my fingers and wished on a star just for you. You're fully covered. Good luck!"
+        ],
+        formal: [
+          "I wish you the very best of luck, {name}. May the outcome reflect the excellence of your preparation.",
+          "Best of luck in your endeavour, {name}. Your diligence gives every reason for confidence."
+        ]
+      }
+    };
+
+    /* ===== 100+ Ready-Made Message Library — auto-selected by occasion =====
+       134 English + 28 Roman Urdu ready messages below, on top of the
+       classic MESSAGES + EXTRA pools and the fresh generator. Picking
+       Birthday, Wedding, Anniversary etc. automatically loads that
+       occasion's messages into Step 2 — no searching needed. */
+    var READY_LIBRARY = {
+      birthday: [
+        "Happy Birthday, {name}! May this year bring you closer to every dream you have been quietly working for — you deserve all of it.",
+        "Wishing you a fantastic birthday, {name}! May your day start with smiles, end with cake, and be remembered all year long.",
+        "Happy Birthday, {name}! Another year, another reason for everyone who knows you to be grateful that you exist.",
+        "To {name} on your birthday — may health, happiness and success follow you in everything you do this year.",
+        "Happy Birthday, {name}! May your heart be light, your laughter loud, and your birthday cake extra large.",
+        "Sending you the biggest birthday hugs, {name}! May today surround you with love from every direction.",
+        "Happy Birthday, {name}! You make life better for so many people — today we get to make it better for you.",
+        "Cheers to you, {name}! May this birthday open new doors, bring happy surprises, and give you stories worth telling forever.",
+        "Happy Birthday, {name}! May every candle you blow out turn into a wish that comes true this year.",
+        "For {name}, with love on your special day — may you be celebrated today exactly as wonderfully as you deserve.",
+        "Happy Birthday, {name}! Old enough to know better, young enough to do it anyway — have the best day ever!",
+        "Wishing {name} a birthday full of favourite songs, favourite food and favourite people. What more could anyone want?",
+        "Happy Birthday, {name}! May your year be filled with adventures that become your favourite memories.",
+        "To the birthday star, {name} — shine bright today, eat cake like a champion, and enjoy every single second."
+      ],
+      wedding: [
+        "Congratulations, {name}! May your wedding day be just the beautiful beginning of a lifetime you both love living together.",
+        "Wishing you both endless love, {name}. May your home always be warm, your laughter daily, and your hearts always close.",
+        "Happy Wedding, {name}! May you always find in each other the love, comfort and friendship you celebrate today.",
+        "To a wonderful couple — {name}, may your marriage be full of shared dreams, quiet support and joyful celebrations.",
+        "Congratulations on finding your forever person, {name}! Wishing you a love that grows stronger with every sunrise.",
+        "May your life together be a beautiful adventure, {name} — full of kindness, patience and moments that make you smile for years.",
+        "Wishing you a lifetime of love and happiness, {name}. Today you start writing your favourite story — together.",
+        "Congratulations, {name}! May your wedding be unforgettable and your marriage even more beautiful than the day itself.",
+        "For {name} — may you love each other more today than yesterday, and less than tomorrow. Happy Wedding!",
+        "Warmest congratulations, {name}! May every year together bring you even closer and fill your home with peace and joy."
+      ],
+      anniversary: [
+        "Happy Anniversary, {name}! Years together and still choosing each other every day — that is what true love looks like.",
+        "Congratulations on another beautiful year, {name}! May your love story keep inspiring everyone around you.",
+        "Wishing you both a very happy anniversary, {name}. May the years ahead be filled with health, laughter and togetherness.",
+        "Happy Anniversary, {name}! From your first day together to today, every chapter has been worth celebrating.",
+        "To {name} — thank you for showing us that lasting love is real. May your anniversary be as special as your bond.",
+        "Another year of love, trust and teamwork — Happy Anniversary, {name}! Here is to many, many more.",
+        "Happy Anniversary, {name}! May you fall in love with each other over and over again, year after year.",
+        "Wishing a perfect pair a perfect anniversary, {name}. May your hearts stay as close as they were on day one.",
+        "Congratulations, {name}! Celebrating your love today and wishing you a future full of shared smiles and sweet memories.",
+        "Happy Anniversary, {name}! Your journey together proves that the best things in life are built with love and patience."
+      ],
+      baby: [
+        "Congratulations, {name}! A beautiful baby has arrived — may this little life bring your family endless joy and pride.",
+        "Welcome to the world, baby! Congratulations, {name} — may your little one grow healthy, happy and deeply loved.",
+        "Huge congratulations, {name}! May your baby's first smile be the first of a million happy moments together.",
+        "A new baby, a new beginning, a heart full of love — congratulations, {name}, on your precious arrival.",
+        "Wishing your family so much happiness, {name}. May your baby be blessed with health, laughter and a wonderful life.",
+        "Congratulations, {name}! Tiny fingers, tiny toes, and a love bigger than you ever imagined. Enjoy every cuddle.",
+        "So happy for you, {name}! May parenthood bring you sweet surprises, proud moments and love in its purest form.",
+        "Welcome, little one! {name}, your family just got more beautiful. Wishing you all health and happiness always.",
+        "Congratulations on your bundle of joy, {name}! May your home fill with baby giggles and beautiful memories.",
+        "A star is born! Congratulations, {name} — wishing your baby a life as bright and lovely as this special day."
+      ],
+      congrats: [
+        "Congratulations, {name}! This is your moment — you earned it with hard work, patience and belief in yourself.",
+        "Well done, {name}! Wishing you even bigger success after this well-deserved achievement. So proud of you!",
+        "Congratulations, {name}! May this success be a stepping stone to everything you dream of next.",
+        "You aimed high and you did it, {name}! Congratulations — may your future be as impressive as this win.",
+        "Big congratulations, {name}! Your dedication has paid off in the best way. Keep shining and keep rising.",
+        "Congratulations, {name}! Today everyone sees your success — we always knew it was coming. Brilliant work!",
+        "Wishing you heartfelt congratulations, {name}. May new opportunities keep finding their way to you.",
+        "Congratulations, {name}! Hard work looks good on you. Here is to your next big achievement — coming soon!",
+        "So thrilled for you, {name}! Congratulations on this milestone — celebrate it, you have truly earned it.",
+        "Congratulations, {name}! May this be remembered as the day everything started falling into place for you."
+      ],
+      graduation: [
+        "Congratulations, {name}! You graduated — may your knowledge, courage and dreams take you exactly where you want to go.",
+        "Happy Graduation, {name}! This degree is proof of your hard work. The world is ready for what you will do next.",
+        "Well done, graduate {name}! Wishing you success in every interview, every project and every big plan ahead.",
+        "Congratulations, {name}! Years of effort led to this proud day — may your future reward you even more.",
+        "To {name} on your graduation — dream big, work smart, stay kind, and success will follow you everywhere.",
+        "Caps off to {name}! Congratulations on graduating — may this achievement open doors to an amazing career.",
+        "Congratulations, {name}! You did not just finish your studies, you finished strong. Very proud of you!",
+        "Happy Graduation, {name}! May every lesson you learned become a strength in the journey ahead.",
+        "Wishing you a bright future, {name}. Congratulations, graduate — go out there and make your mark!",
+        "Congratulations, {name}! Today you celebrate an ending and a beginning at the same time — both are wonderful."
+      ],
+      eid: [
+        "Eid Mubarak, {name}! May Allah bless you and your family with health, happiness, peace and barakah in everything.",
+        "Wishing you a joyful Eid, {name}! May your prayers be accepted and your home be filled with smiles and sweetness.",
+        "Eid Mubarak, {name}! After Ramadan's patience and prayers, may this Eid bring you reward, relief and pure happiness.",
+        "Chaand Mubarak and Eid Mubarak, {name}! May your day be full of delicious food, warm hugs and generous Eidi.",
+        "Sending Eid love to you, {name}! May Allah grant you success in this world and the next. Eid Mubarak!",
+        "Eid Mubarak, {name}! May every dua you made in Ramadan be answered in the most beautiful way.",
+        "Wishing you and your loved ones a blessed Eid, {name} — full of faith, family, food and unforgettable moments.",
+        "Eid Mubarak, {name}! May the blessings of Allah fill your life with happiness today and always.",
+        "To {name}, with warm Eid wishes — may your heart be light, your table full, and your loved ones near.",
+        "Eid Mubarak, {name}! Celebrate big, forgive quickly, smile often — that is the spirit of Eid."
+      ],
+      diwali: [
+        "Happy Diwali, {name}! May light always win in your life — bringing you prosperity, health and happiness.",
+        "Wishing you a bright and joyful Diwali, {name}! May every diya bring a new hope and a new reason to smile.",
+        "Happy Diwali, {name}! May Goddess Lakshmi bless your home with wealth, wisdom and wonderful beginnings.",
+        "To {name} — may your Diwali sparkle with moments of love, laughter, sweets and togetherness.",
+        "Happy Diwali, {name}! May the festival of lights illuminate your path and warm your heart all year.",
+        "Wishing you success and glory this Diwali, {name}! May your life shine as bright as the diyas tonight.",
+        "Happy Diwali, {name}! Eat the sweets, light the lamps, hug your people — celebrate the light within you.",
+        "May this Diwali mark the start of your luckiest year yet, {name}. Wishing you prosperity in everything.",
+        "Happy Diwali to you and your family, {name}! May peace and progress stay with you in the year ahead.",
+        "Sending you Diwali wishes full of light, {name} — may darkness never stand a chance against your smile."
+      ],
+      christmas: [
+        "Merry Christmas, {name}! May your holiday be wrapped in warmth, tied with love, and filled with laughter.",
+        "Wishing you a magical Christmas, {name}! May peace be your gift, and happiness your blessing all year.",
+        "Merry Christmas, {name}! May your home glow with lights, your table with food, and your heart with gratitude.",
+        "To {name} at Christmas — may you be surrounded by the people who make your life feel complete.",
+        "Merry Christmas, {name}! Wishing you cosy evenings, joyful mornings and memories you will treasure forever.",
+        "Sending Christmas cheer to you, {name}! May Santa be generous and the season be kind to you.",
+        "Merry Christmas, {name}! May the spirit of giving and loving stay with you long after the lights come down.",
+        "Wishing you a Christmas full of wonder, {name} — and a New Year full of promise waiting right behind it.",
+        "Merry Christmas, {name}! May every carol remind you how loved and appreciated you truly are.",
+        "Warmest Christmas wishes, {name}! Rest well, eat well, laugh well — you deserve a beautiful holiday."
+      ],
+      newyear: [
+        "Happy New Year, {name}! May this year bring you good health, true happiness and success in all you plan.",
+        "Wishing you a wonderful New Year, {name}! May every month give you a new reason to be proud and grateful.",
+        "Happy New Year, {name}! Leave the worries behind, carry the lessons forward, and chase the dreams ahead.",
+        "To {name} — may the New Year be your fresh start: braver goals, kinder days and bigger wins.",
+        "Happy New Year, {name}! May luck knock often, may friends stay close, and may your heart stay light.",
+        "Cheers to a new beginning, {name}! Wishing you 12 months of laughter, love and little victories.",
+        "Happy New Year, {name}! This is your year to shine — believe it, plan it, and go make it happen.",
+        "Wishing you prosperity and peace, {name}. May the New Year reward your hard work generously.",
+        "Happy New Year, {name}! May you surprise yourself with how far you go this year. Rooting for you!",
+        "To a bright year ahead, {name}! May it be filled with good news, good people and great adventures."
+      ],
+      valentine: [
+        "Happy Valentine's Day, {name}! You are loved today, tomorrow, and every ordinary day in between.",
+        "To {name} — being loved by you and loving you back is my favourite thing. Happy Valentine's Day!",
+        "Happy Valentine's, {name}! May your day be filled with roses, chocolates and reminders of how special you are.",
+        "Wishing you a Valentine's Day as beautiful as your heart, {name}. Thank you for every smile you give.",
+        "Happy Valentine's Day, {name}! Some people search their whole lives for what I found in you.",
+        "For {name}, my favourite person — today the world celebrates love, and I celebrate you.",
+        "Happy Valentine's, {name}! You turn simple moments into memories I never want to forget.",
+        "To {name} with all my love — may this Valentine's bring us even closer than we already are.",
+        "Happy Valentine's Day, {name}! Your love makes life softer, warmer and so much more fun.",
+        "Roses are red, the sky is blue, every Valentine's wish I have begins and ends with you, {name}."
+      ],
+      thanks: [
+        "Thank you so much, {name}! Your help meant more than you know — I am truly grateful for you.",
+        "Dear {name}, thank you for your kindness, your time and your support. People like you are rare and precious.",
+        "Thank you, {name}! Because of you, something difficult became easy. I will always remember this.",
+        "Sending you a heartfelt thank you, {name}! May life return your goodness to you a hundred times over.",
+        "Thank you for everything, {name}! Your generosity and care have touched my heart deeply.",
+        "With gratitude to {name} — thank you for standing by me, believing in me, and never hesitating to help.",
+        "Thank you, {name}! A small word for a big kindness — please know it comes with my sincerest thanks.",
+        "I appreciate you so much, {name}. Thank you for being thoughtful, reliable and simply wonderful.",
+        "Thank you, {name}! Your support gave me strength exactly when I needed it most. Forever grateful.",
+        "For {name} — thank you for the laughs, the help and the heart you put into everything you do."
+      ],
+      goodluck: [
+        "Good luck, {name}! You have worked hard for this — go in confident and come out proud.",
+        "Best of luck, {name}! Wishing you calm, courage and the perfect outcome you have been preparing for.",
+        "Good luck, {name}! May fortune favour you today and may your effort shine through in every moment.",
+        "Sending you all my best wishes, {name}! You have got the talent — now go show it. Good luck!",
+        "Good luck, {name}! Believe in yourself as much as I believe in you, and nothing can stop you.",
+        "Wishing you success, {name}! May this opportunity turn into the breakthrough you have been waiting for.",
+        "Good luck, {name}! Take a deep breath, trust your preparation, and give it your absolute best.",
+        "To {name} before the big moment — good luck! Whatever happens, we are already proud of you.",
+        "Good luck, {name}! May the right words, right timing and right luck all meet you at the door.",
+        "Best wishes, {name}! Go chase that goal — your hard work deserves a happy ending. Good luck!"
+      ]
+    };
+    var READY_LIBRARY_UR = {
+      birthday: ["Salgirah ki dher saari mubarakbad, {name}! Allah aap ko sehat, kamyabi aur lambi khushiyon bhari zindagi ata farmaye.","Happy Birthday {name}! Aaj ka din aap ke naam — Allah aap ki har jaiz khwahish poori kare. Ameen.","{name}, janamdin mubarak! Dua hai naya saal aap ke liye izzat, daulat aur sakoon lekar aye."],
+      wedding: ["Shaadi ki bohat bohat mubarak, {name}! Allah aap dono ki zindagi ko mohabbat aur barkat se bhar de.","{name}, Allah aap ke naye safar ko asaan aur khushiyon bhara banaye. Shaadi Mubarak!"],
+      anniversary: ["Anniversary Mubarak, {name}! Allah aap ki jodi hamesha salamat aur khush rakhe.","{name}, har saal aap ki mohabbat aur barh jaye — yehi dil se dua hai. Happy Anniversary!"],
+      baby: ["Bohat mubarak ho, {name}! Allah ne aap ko sab se pyara tohfa diya hai — bache ko sehat aur nek nasib ata farmaye.","{name}, nannhay mehman ki aamad mubarak! Allah aap ke ghar ko hamesha khushiyon se abaad rakhe."],
+      congrats: ["Dil se mubarakbad, {name}! Aap ki mehnat ka phal mila hai — Allah aur kamyabi de.","Kamyabi Mubarak, {name}! Aap ne sabit kar diya ke mehnat kabhi zaya nahi jati."],
+      graduation: ["Graduation Mubarak, {name}! Allah aap ke ilm ko aap ke liye kamyabi ka zariya banaye.","{name}, degree mubarak! Ab mustaqbil aap ka intezar kar raha hai — bohat si duaen."],
+      eid: ["Eid Mubarak, {name}! Allah aap ki ibadat qabool kare aur ghar mein barkat ata farmaye.","{name}, Chaand Mubarak! Allah aap ko Eidi, khushiyan aur sehat se nawaze."],
+      diwali: ["Diwali Mubarak, {name}! Ye roshniyon ka din aap ki zindagi mein khushiyan lekar aye.","{name}, aap ko Diwali ki dil se mubarakbad — har diya aap ke liye nayi kamyabi jalaye."],
+      christmas: ["Christmas Mubarak, {name}! Allah aap ko aman, sehat aur khushiyan ata farmaye.","Merry Christmas, {name}! Ye din aap ke liye mohabbat aur sakoon lekar aye."],
+      newyear: ["Naya Saal Mubarak, {name}! Allah karay ye saal aap ke liye sab se behtareen saal ho.","Happy New Year, {name}! Nayi umeedein, nayi kamyabiyan — bohat si duaen aap ke liye."],
+      valentine: ["Happy Valentine's Day, {name}! Tum meri muskurahat ki sab se khoobsurat wajah ho.","{name}, mohabbat ke din par sirf itna kehna hai — tum bohat khaas ho."],
+      thanks: ["Dil se shukriya, {name}! Aap ki madad hamesha yaad rahegi, Allah aap ko ajar de.","Bohat shukriya, {name}! Aap jese log mushkil waqt ko asaan bana dete hain."],
+      goodluck: ["Best of luck, {name}! Allah aap ko kamyabi aur asaaniyan ata farmaye.","{name}, bohat si duaen aap ke saath hain — Allah aap ko jeet naseeb kare."]
+    };
+    function readyLibraryCount(){
+      var n = 0, k;
+      for (k in READY_LIBRARY) n += READY_LIBRARY[k].length;
+      for (k in READY_LIBRARY_UR) n += READY_LIBRARY_UR[k].length;
+      return n;
+    }
+    function libraryTotalCount(){
+      var n = readyLibraryCount(), occ, tone;
+      for (occ in MESSAGES){
+        if (MESSAGES[occ].ur) n += MESSAGES[occ].ur.length;
+        for (tone in MESSAGES[occ].en) n += MESSAGES[occ].en[tone].length;
+      }
+      for (occ in EXTRA) for (tone in EXTRA[occ]) n += EXTRA[occ][tone].length;
+      return n;
+    }
+
+    var TONE_LABELS = { heartfelt:"Heartfelt", joyful:"Joyful", funny:"Funny", formal:"Formal" };
+
+    /* ===== Fresh Message Generator — a new combination every time =====
+       Openers x occasion wishes x closers are mixed by a random seed, so
+       every "Fresh new messages" tap builds wishes that were never shown
+       in exactly this form before — not the same set for everyone. */
+    var FRESH_OPENERS = {
+      heartfelt: ["Dear {name},", "For you, {name} —", "Thinking of you today, {name}.", "With all my heart, {name}:", "To someone truly special, {name} —"],
+      joyful: ["Hooray, {name}!", "Big day, big smiles, {name}!", "Guess what, {name}? Today is all about you!", "Pop the confetti, {name}!", "It's celebration time, {name}!"],
+      funny: ["Official announcement, {name}:", "Breaking news, {name} —", "Dear {name}, please remain calm:", "Alert, {name}! The party police say:", "Well well well, {name}…"],
+      formal: ["Warmest greetings, {name}.", "Dear {name},", "With sincere good wishes, {name}:", "It is a pleasure to write to you, {name}.", "On this special occasion, {name}:"]
+    };
+    var FRESH_CLOSERS = {
+      heartfelt: ["May every day ahead return the kindness you give to the world.", "You are loved more than words can say — today and always.", "Wishing you health, peace and a heart that stays this happy.", "May this be the start of your most beautiful chapter yet.", "Hold this wish close: you deserve every good thing coming your way."],
+      joyful: ["Let's celebrate like we mean it!", "Here's to laughter, cake-level happiness and zero boring moments!", "May your day sparkle from morning to midnight!", "Dance a little, smile a lot — this day was made for you!", "Sending you a sky full of good vibes and a heart full of joy!"],
+      funny: ["Your gift is this message. Budget spent. Love priceless.", "Calories today officially do not count. You're welcome.", "Please collect your prize: unlimited hugs and zero responsibilities (today only).", "May your Wi-Fi be strong and your cake be stronger.", "You may now do a happy dance. It's basically the law."],
+      formal: ["May the time ahead bring you continued success and contentment.", "Wishing you every happiness, today and in all that follows.", "Please accept these wishes with warm regards and respect.", "May you be blessed with good health and lasting prosperity.", "With best wishes for a wonderful day and a bright future."]
+    };
+    var FRESH_WISHES = {
+      birthday: ["another year of you is officially everyone's favourite gift", "may your candles be many, your wishes bold and every single one of them come true", "the world got a little brighter the day you arrived in it", "may this year surprise you in all the best ways", "your smile deserves a whole year of reasons to show up", "may your cake be sweet, your people close and your worries very, very small"],
+      wedding: ["may your life together read like everyone's favourite love story", "two hearts, one home — may it always be full of laughter", "may your love keep choosing each other, every single day", "may your marriage be modern enough to share the chores and old-fashioned enough to last forever", "may every year together be sweeter than the last", "may your home be built on love, patience and really good snacks"],
+      anniversary: ["every year together is proof that real love only gets better", "may the next chapter of your story be your favourite one yet", "your love is the kind people write songs about", "may you keep laughing at the same jokes for fifty more years", "together you make ordinary days feel like celebrations", "may your bond grow stronger, warmer and even more fun with time"],
+      baby: ["a tiny new heartbeat has just made the whole world softer", "may your little one grow up wrapped in love, health and wonder", "the smallest feet leave the biggest footprints on our hearts", "may your home fill with tiny socks, big yawns and endless cuddles", "a new adventure has begun — and it has the cutest face", "may every first — first smile, first step, first word — feel like pure magic"],
+      congrats: ["your hard work finally got the applause it always deserved", "this success was not luck — it was earned, hour by hour", "may this win open doors you have not even knocked on yet", "you set a goal, chased it and caught it — brilliantly done", "may this achievement be the first line of a very long success story", "the spotlight suits you — enjoy every second of it"],
+      graduation: ["the tassel was worth the hassle — and so was every late night", "may your degree be the key to doors you have only dreamed of", "you did not just pass — you proved what you are made of", "may the future be as bright as the smile on your face today", "school may be over, but your story is only on chapter one", "may you walk into the world curious, brave and unstoppable"],
+      eid: ["may Allah accept your fasts, your prayers and every quiet good deed", "may your home be blessed with barakah, your table with sweetness and your heart with peace", "after a month of patience, may your reward be pure joy", "may your Eidi be generous and your sheer khurma unforgettable", "may this Eid wrap you and your family in mercy and light", "may every prayer you whispered this Ramadan be answered beautifully"],
+      diwali: ["may every diya you light chase a little darkness out of the world", "may Lakshmi bless your home with prosperity and your heart with light", "may your year ahead glow brighter than the brightest sparkler", "may sweets be shared, lamps be lit and worries be forgotten tonight", "may the festival of lights mark the start of your luckiest year", "may your home shine with love long after the diyas fade"],
+      christmas: ["may your home glow with warmth, cocoa and the people you love most", "may the magic of this season stay with you all year long", "may your tree be bright, your table full and your heart even fuller", "may every gift you give return to you as joy", "may peace find you this Christmas and refuse to leave", "may your days be merry, your nights cosy and your stockings mysteriously full"],
+      newyear: ["may this year be the plot twist you have been waiting for", "365 fresh pages are waiting — and you hold the pen", "may the new year bring brave plans, kind people and lucky breaks", "out with the old worries, in with the new wonders", "may this be the year your 'one day' becomes 'day one'", "may every month of this year give you a reason to celebrate"],
+      valentine: ["in a world of billions, my favourite place is still beside you", "you make ordinary Tuesdays feel like little celebrations", "may today remind you how completely, ridiculously loved you are", "every love story is nice — ours is my favourite genre", "may your heart get today everything it quietly wishes for", "you are the plot twist my heart never saw coming — and always wanted"],
+      thanks: ["your kindness arrived exactly when it was needed most", "some help is forgotten — yours never will be", "you did not have to help, and that is exactly why it means so much", "may the goodness you give return to you multiplied", "because of you, a hard day became a bearable one — then a good one", "your generosity has a permanent place in my gratitude list"],
+      goodluck: ["you have done the preparation — now let luck do the showing off", "may calm nerves and a clear mind walk in with you", "everything you need, you already carry inside you", "may the universe conspire in your favour today", "go in brave — the best stories start exactly like this", "may today be the day effort meets opportunity, right on time"]
+    };
+    var FRESH_UR = [
+      "{name}, aaj ka din sirf aap ke naam! Dua hai ke zindagi aap ko har woh khushi de jis ke aap haqdar hain — sehat, sakoon aur dher saara pyaar.",
+      "Mubarak ho {name}! Allah aap ke har kadam ko asaan kare, har mushkil ko door kare aur har din ko pichle se khoobsurat bana de.",
+      "{name}, aap jese log bohat kam milte hain. Allah aap ko hamesha khush rakhe, abaad rakhe aur har bala se mehfooz rakhe.",
+      "Dil se mubarakbad, {name}! Nayi manzil, nayi umeed — Allah aap ke nasib mein sirf behtari likhe. Ameen.",
+      "{name}, aaj muskurane ka din hai! Allah aap ki zindagi ko khushiyon se bhar de aur aap ke apno ko hamesha salamat rakhe.",
+      "Bohat si duaen aap ke liye, {name} — Allah aap ko woh sab ata kare jo aap chup chaap dil mein mangte hain."
+    ];
+    function seededRandom(seed){
+      var a = (seed >>> 0) || 1;
+      return function(){
+        a |= 0; a = (a + 0x6D2B79F5) | 0;
+        var t = Math.imul(a ^ (a >>> 15), 1 | a);
+        t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+        return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+      };
+    }
+    function generateFreshMessages(count){
+      var rnd = seededRandom(state.seed * 7919 + state.occasion.length * 131 + state.tone.length * 17 + (state.lang === "ur" ? 55 : 3));
+      var out = [], seen = {}, seenWish = {}, seenCloser = {};
+      var guard = 0;
+      while (out.length < count && guard < 120){
+        guard++;
+        var text;
+        if (state.lang === "ur"){
+          text = FRESH_UR[Math.floor(rnd() * FRESH_UR.length)];
+          if (seen[text]) continue;
+        } else {
+          var op = FRESH_OPENERS[state.tone][Math.floor(rnd() * FRESH_OPENERS[state.tone].length)];
+          var wishPool = FRESH_WISHES[state.occasion] || FRESH_WISHES.birthday;
+          var wish = wishPool[Math.floor(rnd() * wishPool.length)];
+          var cl = FRESH_CLOSERS[state.tone][Math.floor(rnd() * FRESH_CLOSERS[state.tone].length)];
+          if (seenWish[wish] || seenCloser[cl]) continue; /* no repeated line inside one set */
+          seenWish[wish] = true; seenCloser[cl] = true;
+          var capWish = /[.!?]$/.test(op.trim()) ? wish.charAt(0).toUpperCase() + wish.slice(1) : wish;
+          text = op + " " + capWish + (wish.slice(-1) === "." ? "" : ".") + " " + cl;
+        }
+        if (seen[text]) continue;
+        seen[text] = true;
+        out.push({ text:text, tone: state.lang === "ur" ? "Fresh · Roman Urdu" : "Fresh · " + TONE_LABELS[state.tone] });
+      }
+      return out;
+    }
+
+    var THEMES = [
+      { id:"royal", name:"Royal Maroon & Gold", bg:["#43122A","#23091A"], ink:"#F8ECD4", sub:"rgba(248,236,212,.78)", accent:"#E9C979", dark:true,
+        colors:["#E9C979","#D96C85","#F8ECD4","#B98A2F"], decoAlpha:.9 },
+      { id:"blush", name:"Garden Blush", bg:["#FDEDF0","#FAD9E1"], ink:"#5B2334", sub:"rgba(91,35,52,.75)", accent:"#C14B6E", dark:false,
+        colors:["#E77CA0","#F2A7BB","#C14B6E","#E9C979"], decoAlpha:.85 },
+      { id:"party", name:"Party Pop", bg:["#FFF7E0","#FFE7B8"], ink:"#4A2C10", sub:"rgba(74,44,16,.75)", accent:"#E4572E", dark:false,
+        colors:["#E4572E","#2E9E63","#2E7CD6","#E9B949","#C14B6E"], decoAlpha:.95 },
+      { id:"emerald", name:"Emerald Luxe", bg:["#0F4030","#06231A"], ink:"#EAF6EE", sub:"rgba(234,246,238,.78)", accent:"#DCBB63", dark:true,
+        colors:["#DCBB63","#7FCB9B","#EAF6EE","#3E9C74"], decoAlpha:.9 },
+      { id:"sky", name:"Sky Celebration", bg:["#EAF4FE","#CFE6FC"], ink:"#17395C", sub:"rgba(23,57,92,.72)", accent:"#2E7CD6", dark:false,
+        colors:["#2E7CD6","#E4572E","#E9B949","#2E9E63","#7FB2E8"], decoAlpha:.95 },
+      { id:"noir", name:"Midnight Noir", bg:["#20202A","#0E0E14"], ink:"#F3EEE1", sub:"rgba(243,238,225,.75)", accent:"#C9A94E", dark:true,
+        colors:["#C9A94E","#F3EEE1","#8E8EA3","#E9C979"], decoAlpha:.85 },
+      { id:"sunset", name:"Sunset Peach", bg:["#FFE3C2","#FFB98A"], ink:"#5C2E12", sub:"rgba(92,46,18,.74)", accent:"#D6531F", dark:false,
+        colors:["#D6531F","#E9A13B","#C14B6E","#FFF3DF"], decoAlpha:.95 },
+      { id:"ocean", name:"Ocean Breeze", bg:["#0E4D64","#07293A"], ink:"#EAF7FA", sub:"rgba(234,247,250,.78)", accent:"#6FD3D8", dark:true,
+        colors:["#6FD3D8","#2E9E63","#E9C979","#BFEAF2"], decoAlpha:.9 },
+      { id:"lavender", name:"Lavender Dream", bg:["#EFE7FB","#D9C6F2"], ink:"#3E2A5C", sub:"rgba(62,42,92,.72)", accent:"#7A4FB0", dark:false,
+        colors:["#7A4FB0","#B18AE0","#E77CA0","#E9C979"], decoAlpha:.9 },
+      { id:"rosegold", name:"Rose Gold Glow", bg:["#3A1E24","#211014"], ink:"#F9E8DF", sub:"rgba(249,232,223,.78)", accent:"#E8A88F", dark:true,
+        colors:["#E8A88F","#E9C979","#D96C85","#F9E8DF"], decoAlpha:.9 },
+      { id:"mint", name:"Mint Fresh", bg:["#E4F7EC","#BEE8D2"], ink:"#17452F", sub:"rgba(23,69,47,.72)", accent:"#1E8A57", dark:false,
+        colors:["#1E8A57","#57B981","#E9B949","#E77CA0"], decoAlpha:.95 },
+      { id:"cherry", name:"Cherry Blossom", bg:["#FFF0F3","#FBD3DC"], ink:"#5C2333", sub:"rgba(92,35,51,.73)", accent:"#D14D72", dark:false,
+        colors:["#D14D72","#F2A7BB","#E77CA0","#A8C686"], decoAlpha:.95 },
+      { id:"sapphire", name:"Sapphire Night", bg:["#14265C","#080F2B"], ink:"#EAF0FF", sub:"rgba(234,240,255,.78)", accent:"#8FB4FF", dark:true,
+        colors:["#8FB4FF","#E9C979","#6FD3D8","#EAF0FF"], decoAlpha:.9 },
+      { id:"coral", name:"Coral Reef", bg:["#FFECE4","#FFC9B5"], ink:"#5C2415", sub:"rgba(92,36,21,.73)", accent:"#D64F26", dark:false,
+        colors:["#D64F26","#E8833A","#2E9E8F","#E9C979"], decoAlpha:.95 },
+      { id:"vintage", name:"Vintage Cream", bg:["#F7EFDB","#EBDCB8"], ink:"#4A3A1A", sub:"rgba(74,58,26,.74)", accent:"#9A7B24", dark:false,
+        colors:["#9A7B24","#C08552","#8A9A5B","#B9552F"], decoAlpha:.85 },
+      { id:"berry", name:"Berry Bliss", bg:["#4A1440","#26081F"], ink:"#FBEAF5", sub:"rgba(251,234,245,.78)", accent:"#F08AC0", dark:true,
+        colors:["#F08AC0","#B565D8","#E9C979","#FBEAF5"], decoAlpha:.9 },
+      { id:"forest", name:"Forest Whisper", bg:["#24402E","#12241A"], ink:"#EDF5E9", sub:"rgba(237,245,233,.78)", accent:"#B9D97A", dark:true,
+        colors:["#B9D97A","#7FCB9B","#E9C979","#EDF5E9"], decoAlpha:.9 },
+      { id:"goldenhour", name:"Golden Hour", bg:["#FFF3D6","#F7D98B"], ink:"#54400D", sub:"rgba(84,64,13,.74)", accent:"#B07E10", dark:false,
+        colors:["#B07E10","#E4572E","#C14B6E","#2E9E63"], decoAlpha:.95 }
+    ];
+
+    /* ---------- Decoration styles — every message gets its own ----------
+       Balloons one time, hearts the next, then flowers or butterflies:
+       the card redraws in the style of whichever wish is opened. */
+    var DECO_STYLES = [
+      { id:"balloons", label:"Balloons", emoji:"🎈", emoji2:"🎈" },
+      { id:"hearts", label:"Hearts", emoji:"💖", emoji2:"❤️" },
+      { id:"floral", label:"Flowers", emoji:"🌸", emoji2:"🌼" },
+      { id:"butterflies", label:"Butterflies", emoji:"🦋", emoji2:"🦋" },
+      { id:"sparkle", label:"Sparkles", emoji:"✨", emoji2:"⭐" },
+      { id:"confetti", label:"Confetti", emoji:"🎊", emoji2:"🎉" }
+    ];
+    function getDecoStyle(id){
+      for (var i=0;i<DECO_STYLES.length;i++) if (DECO_STYLES[i].id===id) return DECO_STYLES[i];
+      return null;
+    }
+    function decoStyleOf(m){ return getDecoStyle(m && m.deco) || DECO_STYLES[0]; }
+    function updateFloatChips(){
+      var st = getDecoStyle(state.cardDeco);
+      var chips = document.querySelectorAll(".float-chip");
+      if (!chips.length) return;
+      if (st){
+        chips[0].textContent = st.emoji;
+        if (chips[2]) chips[2].textContent = st.emoji2;
+      } else {
+        chips[0].textContent = "🎈";
+        if (chips[2]) chips[2].textContent = "🎁";
+      }
+    }
+
+    /* ---------- State ---------- */
+    var state = {
+      occasion: "birthday",
+      tone: "joyful",
+      lang: "en",
+      theme: "royal",
+      decoMode: "auto",
+      cardDeco: null,
+      name: "",
+      sender: "",
+      selectedMsg: "",
+      seed: 7,
+      favs: {}
+    };
+
+    function $(id){ return document.getElementById(id); }
+    function getOccasion(){ for (var i=0;i<OCCASIONS.length;i++) if (OCCASIONS[i].id===state.occasion) return OCCASIONS[i]; return OCCASIONS[0]; }
+    function getTheme(){ for (var i=0;i<THEMES.length;i++) if (THEMES[i].id===state.theme) return THEMES[i]; return THEMES[0]; }
+    function displayName(){ var n = state.name.trim(); return n ? n : "Someone Special"; }
+    function fillName(t){ return t.split("{name}").join(displayName()); }
+
+    function toast(text){
+      var t = $("toast");
+      t.textContent = text;
+      t.classList.add("show");
+      clearTimeout(t._h);
+      t._h = setTimeout(function(){ t.classList.remove("show"); }, 2400);
+    }
+
+    /* ---------- Build occasion grid ---------- */
+    var occGrid = $("occGrid");
+    OCCASIONS.forEach(function(o){
+      var b = document.createElement("button");
+      b.type = "button";
+      b.className = "occ-btn" + (o.id===state.occasion ? " active" : "");
+      b.setAttribute("data-occ", o.id);
+      b.innerHTML = ICONS[o.icon] + "<span>" + o.label + "</span>";
+      b.addEventListener("click", function(){
+        state.occasion = o.id;
+        var btns = occGrid.querySelectorAll(".occ-btn");
+        for (var i=0;i<btns.length;i++) btns[i].classList.toggle("active", btns[i].getAttribute("data-occ")===o.id);
+        state.selectedMsg = "";
+        renderMessages();
+        drawCard();
+        if (typeof triggerFlip === "function") triggerFlip();
+      });
+      occGrid.appendChild(b);
+    });
+
+    /* ---------- Tone + language controls ---------- */
+    $("toneRow").addEventListener("click", function(e){
+      var b = e.target.closest(".pill"); if (!b) return;
+      state.tone = b.getAttribute("data-tone");
+      var pills = $("toneRow").querySelectorAll(".pill");
+      for (var i=0;i<pills.length;i++) pills[i].classList.toggle("active", pills[i]===b);
+      state.selectedMsg = "";
+      renderMessages();
+      drawCard();
+    });
+    $("langSeg").addEventListener("click", function(e){
+      var b = e.target.closest("button"); if (!b) return;
+      state.lang = b.getAttribute("data-lang");
+      var btns = $("langSeg").querySelectorAll("button");
+      for (var i=0;i<btns.length;i++) btns[i].classList.toggle("active", btns[i]===b);
+      state.selectedMsg = "";
+      renderMessages();
+      drawCard();
+    });
+    $("decoRow").addEventListener("click", function(e){
+      var b = e.target.closest(".pill"); if (!b) return;
+      state.decoMode = b.getAttribute("data-deco");
+      var pills = $("decoRow").querySelectorAll(".pill");
+      for (var i=0;i<pills.length;i++) pills[i].classList.toggle("active", pills[i]===b);
+      state.selectedMsg = "";
+      renderMessages();
+      drawCard();
+      toast(state.decoMode === "auto"
+        ? "Auto mix: every message gets a different decoration"
+        : "Decoration style: " + decoStyleOf({ deco: state.decoMode }).label + " for every message");
+    });
+    /* ---------- Name inputs ---------- */
+    $("nameInput").addEventListener("input", function(e){
+      state.name = e.target.value;
+      refreshMessageTexts();
+      drawCard();
+    });
+    $("senderInput").addEventListener("input", function(e){
+      state.sender = e.target.value;
+      drawCard();
+    });
+
+    /* ---------- Messages ---------- */
+    function currentPool(){
+      var data = MESSAGES[state.occasion];
+      var pool = [];
+      if (state.lang === "ur"){
+        data.ur.forEach(function(t){ pool.push({ text:t, tone:"Roman Urdu" }); });
+        (READY_LIBRARY_UR[state.occasion] || []).forEach(function(t){ pool.push({ text:t, tone:"Roman Urdu · Ready" }); });
+      } else {
+        var label = TONE_LABELS[state.tone];
+        data.en[state.tone].forEach(function(t){ pool.push({ text:t, tone:label }); });
+        var extra = ((EXTRA[state.occasion] || {})[state.tone]) || [];
+        extra.forEach(function(t){ pool.push({ text:t, tone:label }); });
+        /* 100+ library: auto-selected for this occasion, whatever the tone */
+        (READY_LIBRARY[state.occasion] || []).forEach(function(t){ pool.push({ text:t, tone:label + " · Ready" }); });
+      }
+      return pool;
+    }
+    function updateLibraryBadge(){
+      var el = $("libraryBadge");
+      if (!el) return;
+      var occ = getOccasion();
+      var perOcc = state.lang === "ur"
+        ? ((MESSAGES[state.occasion].ur || []).length + (READY_LIBRARY_UR[state.occasion] || []).length)
+        : ((READY_LIBRARY[state.occasion] || []).length + 6);
+      el.innerHTML = "";
+      var b = document.createElement("b");
+      b.textContent = "✦ " + libraryTotalCount() + "+ ready messages in the library";
+      var s = document.createElement("span");
+      s.textContent = " — auto-selected for " + occ.label + " (" + perOcc + "+ for this occasion" + (state.lang === "ur" ? ", Roman Urdu" : "") + "). Tap Fresh new messages for a different set.";
+      el.appendChild(b); el.appendChild(s);
+    }
+
+    function pickSet(pool, count){
+      var copy = pool.slice();
+      var seed = state.seed;
+      function rnd(){ seed = (seed * 9301 + 49297) % 233280; return seed / 233280; }
+      for (var i = copy.length - 1; i > 0; i--){
+        var j = Math.floor(rnd() * (i + 1));
+        var tmp = copy[i]; copy[i] = copy[j]; copy[j] = tmp;
+      }
+      var head = copy.slice(0, Math.max(1, count - 2));
+      var rest = pool.filter(function(m){ return head.indexOf(m) === -1; });
+      var out = head.concat(rest).slice(0, count);
+      if (state.lang === "en"){
+        var label = TONE_LABELS[state.tone];
+        out.sort(function(a, b){
+          var pa = a.tone === label ? 0 : 1;
+          var pb = b.tone === label ? 0 : 1;
+          return pa - pb;
+        });
+      }
+      return out;
+    }
+
+    var shownMessages = [];
+    var LOCK_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/><circle cx="12" cy="16" r="1.4" fill="currentColor" stroke="none"/></svg>';
+    function updateUnlockStatus(){
+      var el = $("unlockStatus");
+      if (!el) return;
+      var open = shownMessages.filter(function(m){ return !m.locked; }).length;
+      el.innerHTML = "<strong>" + open + " of " + shownMessages.length + "</strong> messages opened — tap a sealed card to unlock its surprise wish.";
+    }
+    function buildShownSet(){
+      var pool = currentPool();
+      var classic = pickSet(pool, 4);
+      var fresh = generateFreshMessages(2);
+      var all = [], seenT = {};
+      fresh.concat(classic).forEach(function(m){ if (!seenT[m.text]){ seenT[m.text] = true; all.push(m); } });
+      var rnd = seededRandom(state.seed * 31 + 7);
+      for (var i = all.length - 1; i > 0; i--){
+        var j = Math.floor(rnd() * (i + 1));
+        var tmp = all[i]; all[i] = all[j]; all[j] = tmp;
+      }
+      /* favourites the user starred stay at the top, already opened */
+      var favs = [];
+      Object.keys(state.favs).forEach(function(t){ favs.push({ text:t, tone:"Favourite" }); });
+      var favTexts = favs.map(function(f){ return f.text; });
+      all = all.filter(function(m){ return favTexts.indexOf(m.text) === -1; });
+      var out = favs.slice(0, 2).concat(all).slice(0, 6);
+      /* decoration styles: Auto mix gives every message a different style
+         (balloons, hearts, flowers, butterflies…); a chosen style applies to all */
+      var decoOrder = DECO_STYLES.map(function(d){ return d.id; });
+      var drnd = seededRandom(state.seed * 13 + 5);
+      for (var di = decoOrder.length - 1; di > 0; di--){
+        var dj = Math.floor(drnd() * (di + 1));
+        var dtmp = decoOrder[di]; decoOrder[di] = decoOrder[dj]; decoOrder[dj] = dtmp;
+      }
+      out.forEach(function(m, idx){
+        m.deco = (state.decoMode && state.decoMode !== "auto") ? state.decoMode : decoOrder[idx % decoOrder.length];
+      });
+      out.forEach(function(m, idx){ m.locked = favs.indexOf(m) === -1; m.id = "m" + idx + "-" + state.seed; });
+      favs.slice(0, 2).forEach(function(f){
+        for (var k=0;k<out.length;k++) if (out[k].text === f.text) out[k].locked = false;
+      });
+      return out;
+    }
+    function unlockMessage(m, cardEl, silent){
+      if (!m.locked) return;
+      m.locked = false;
+      if (cardEl){
+        cardEl.classList.remove("locked");
+        cardEl.classList.add("unlocking");
+        var ov = cardEl.querySelector(".lock-overlay");
+        if (ov) ov.remove();
+        setTimeout(function(){ cardEl.classList.remove("unlocking"); }, 700);
+      }
+      state.selectedMsg = m.text;
+      state.cardDeco = m.deco || null;
+      updateFloatChips();
+      var cards = $("msgList").querySelectorAll(".msg-card");
+      for (var i=0;i<cards.length && i<shownMessages.length;i++) cards[i].classList.toggle("selected", shownMessages[i].text === state.selectedMsg);
+      updateUnlockStatus();
+      drawCard();
+      if (!silent){ toast("Message unlocked — it's on your card now"); if (typeof triggerFlip === "function") triggerFlip(); }
+    }
+    function renderMessages(){
+      if (typeof updateLibraryBadge === "function") updateLibraryBadge();
+      shownMessages = buildShownSet();
+      state.selectedMsg = "";
+      var firstOpen = shownMessages.filter(function(m){ return !m.locked; })[0];
+      if (firstOpen) state.selectedMsg = firstOpen.text;
+      state.cardDeco = firstOpen ? (firstOpen.deco || null) : null;
+      updateFloatChips();
+      var list = $("msgList");
+      list.innerHTML = "";
+      shownMessages.forEach(function(m, idx){
+        var card = document.createElement("button");
+        card.type = "button";
+        card.style.animationDelay = (idx * 0.09) + "s";
+        card.className = "msg-card" + (m.text === state.selectedMsg ? " selected" : "") + (m.locked ? " locked" : "");
+        card.setAttribute("aria-label", m.locked ? "Locked message — tap to open" : "Message — tap to put it on the card");
+        var body = document.createElement("div");
+        body.className = "msg-body";
+        var dst = decoStyleOf(m);
+        var decoMark = document.createElement("span");
+        decoMark.className = "msg-deco";
+        decoMark.setAttribute("aria-hidden", "true");
+        decoMark.textContent = dst.emoji;
+        body.appendChild(decoMark);
+        var p = document.createElement("p");
+        p.textContent = fillName(m.text);
+        var meta = document.createElement("div");
+        meta.className = "msg-meta";
+        var tag = document.createElement("span");
+        tag.className = "tag";
+        tag.textContent = m.tone;
+        var chip = document.createElement("span");
+        chip.className = "deco-chip";
+        chip.textContent = dst.emoji + " " + dst.label;
+        var leftMeta = document.createElement("span");
+        leftMeta.style.display = "inline-flex";
+        leftMeta.style.gap = "8px";
+        leftMeta.style.alignItems = "center";
+        leftMeta.style.flexWrap = "wrap";
+        leftMeta.appendChild(tag);
+        leftMeta.appendChild(chip);
+        var actions = document.createElement("span");
+        actions.style.display = "inline-flex";
+        actions.style.gap = "2px";
+        actions.style.alignItems = "center";
+        var fav = document.createElement("span");
+        fav.className = "fav-btn" + (state.favs[m.text] ? " active" : "");
+        fav.setAttribute("role","button");
+        fav.setAttribute("aria-label","Keep this message as a favourite");
+        fav.textContent = state.favs[m.text] ? "★" : "☆";
+        fav.addEventListener("click", function(ev){
+          ev.stopPropagation();
+          if (m.locked){ toast("Unlock this message first, then star it"); return; }
+          if (state.favs[m.text]){ delete state.favs[m.text]; fav.classList.remove("active"); fav.textContent = "☆"; toast("Removed from favourites"); }
+          else { state.favs[m.text] = true; fav.classList.add("active"); fav.textContent = "★"; toast("Kept as favourite — it will stay on top next time"); }
+        });
+        var copy = document.createElement("span");
+        copy.className = "copy-mini";
+        copy.setAttribute("role","button");
+        copy.setAttribute("aria-label","Copy this message");
+        copy.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copy';
+        copy.addEventListener("click", function(ev){
+          ev.stopPropagation();
+          if (m.locked){ toast("This message is locked — tap it to open first"); return; }
+          copyText(fillName(m.text));
+        });
+        actions.appendChild(fav);
+        actions.appendChild(copy);
+        meta.appendChild(leftMeta);
+        meta.appendChild(actions);
+        body.appendChild(p);
+        body.appendChild(meta);
+        card.appendChild(body);
+        if (m.locked){
+          var overlay = document.createElement("div");
+          overlay.className = "lock-overlay";
+          overlay.innerHTML = '<span class="lock-badge">' + LOCK_SVG + '</span><strong>Sealed wish #' + (idx + 1) + ' · ' + dst.emoji + ' ' + dst.label + '</strong><span>Tap to open</span>';
+          card.appendChild(overlay);
+        }
+        card.addEventListener("click", function(){
+          if (m.locked){ unlockMessage(m, card, false); return; }
+          state.selectedMsg = m.text;
+          state.cardDeco = m.deco || null;
+          updateFloatChips();
+          var cards = list.querySelectorAll(".msg-card");
+          for (var i=0;i<cards.length;i++) cards[i].classList.toggle("selected", shownMessages[i].text === state.selectedMsg);
+          drawCard();
+          triggerFlip();
+        });
+        list.appendChild(card);
+      });
+      updateUnlockStatus();
+    }
+
+    function refreshMessageTexts(){
+      var cards = $("msgList").querySelectorAll(".msg-card .msg-body p");
+      for (var i=0;i<cards.length && i<shownMessages.length;i++){
+        cards[i].textContent = fillName(shownMessages[i].text);
+      }
+    }
+
+    $("unlockAllBtn").addEventListener("click", function(){
+      var cards = $("msgList").querySelectorAll(".msg-card");
+      var any = false;
+      shownMessages.forEach(function(m, i){ if (m.locked){ any = true; unlockMessage(m, cards[i], true); } });
+      if (any){ state.selectedMsg = shownMessages[0].text; state.cardDeco = shownMessages[0].deco || null; updateFloatChips(); drawCard(); toast("All messages unlocked"); if (typeof celebrateBurst === "function") celebrateBurst(); }
+      else toast("Everything is already open");
+      updateUnlockStatus();
+    });
+    $("lockAllBtn").addEventListener("click", function(){
+      state.selectedMsg = "";
+      renderMessages();
+      drawCard();
+      toast("Messages sealed again — tap one to open");
+    });
+
+    $("shuffleBtn").addEventListener("click", function(){
+      state.seed = Math.floor(Math.random() * 100000) + 1;
+      state.selectedMsg = "";
+      renderMessages();
+      drawCard();
+      toast("Brand-new locked messages ready — tap one to open");
+    });
+
+    $("surpriseBtn").addEventListener("click", function(){
+      var oi = Math.floor(Math.random() * OCCASIONS.length);
+      state.occasion = OCCASIONS[oi].id;
+      var tones = ["heartfelt","joyful","funny","formal"];
+      state.tone = tones[Math.floor(Math.random() * tones.length)];
+      state.theme = THEMES[Math.floor(Math.random() * THEMES.length)].id;
+      state.seed = Math.floor(Math.random() * 100000) + 1;
+      state.selectedMsg = "";
+      var btns = occGrid.querySelectorAll(".occ-btn");
+      for (var i=0;i<btns.length;i++) btns[i].classList.toggle("active", btns[i].getAttribute("data-occ")===state.occasion);
+      var pills = $("toneRow").querySelectorAll(".pill");
+      for (var j=0;j<pills.length;j++) pills[j].classList.toggle("active", pills[j].getAttribute("data-tone")===state.tone);
+      syncSwatches();
+      renderMessages();
+      drawCard();
+      toast("Surprise card: " + getOccasion().label + " · " + getTheme().name);
+    });
+
+    /* ---------- Theme swatches ---------- */
+    var swatchRow = $("swatchRow");
+    THEMES.forEach(function(th){
+      var b = document.createElement("button");
+      b.type = "button";
+      b.className = "swatch" + (th.id===state.theme ? " active" : "");
+      b.setAttribute("data-theme", th.id);
+      b.setAttribute("aria-label", th.name);
+      b.title = th.name;
+      b.style.background = "linear-gradient(135deg," + th.bg[0] + "," + th.bg[1] + ")";
+      b.addEventListener("click", function(){
+        state.theme = th.id;
+        syncSwatches();
+        drawCard();
+        if (typeof triggerFlip === "function") triggerFlip();
+      });
+      swatchRow.appendChild(b);
+    });
+    function syncSwatches(){
+      var btns = swatchRow.querySelectorAll(".swatch");
+      for (var i=0;i<btns.length;i++) btns[i].classList.toggle("active", btns[i].getAttribute("data-theme")===state.theme);
+      $("themeName").textContent = "Design: " + getTheme().name + " · " + (THEMES.indexOf(getTheme()) + 1) + " of " + THEMES.length;
+    }
+    $("randomDesignBtn").addEventListener("click", function(){
+      var pool = THEMES.filter(function(t){ return t.id !== state.theme; });
+      state.theme = pool[Math.floor(Math.random() * pool.length)].id;
+      syncSwatches(); drawCard();
+      if (typeof triggerFlip === "function") triggerFlip();
+      toast("Design: " + getTheme().name);
+    });
+    var spinTimer = null;
+    $("spinDesignBtn").addEventListener("click", function(){
+      if (spinTimer){ clearInterval(spinTimer); spinTimer = null; return; }
+      var steps = 0;
+      spinTimer = setInterval(function(){
+        steps++;
+        state.theme = THEMES[Math.floor(Math.random() * THEMES.length)].id;
+        syncSwatches(); drawCard();
+        if (steps >= 14){
+          clearInterval(spinTimer); spinTimer = null;
+          if (typeof celebrateBurst === "function") celebrateBurst();
+          toast("The wheel chose: " + getTheme().name);
+        }
+      }, 110);
+    });
+
+    /* ---------- Human verification — a quick check before downloads ----------
+       The first download of a visit asks the visitor to solve a tiny
+       randomised sum. It runs entirely on this device (nothing is sent
+       anywhere), it is passed once per visit, and downloads are also
+       rate-limited — together they stop simple bots and download scripts
+       from abusing the page. */
+    var humanVerified = false;
+    var pendingDownload = null;
+    var verifyAnswer = 0;
+    var lastDownloadAt = 0;
+    function downloadCooldownOk(){
+      var now = Date.now();
+      if (now - lastDownloadAt < 1500){ toast("One moment — your last download just started"); return false; }
+      lastDownloadAt = now;
+      return true;
+    }
+    function newVerifyQuestion(){
+      var a = 2 + Math.floor(Math.random() * 8);
+      var b = 2 + Math.floor(Math.random() * 8);
+      verifyAnswer = a + b;
+      $("verifyQ").textContent = "What is " + a + " + " + b + "?";
+      var opts = [verifyAnswer];
+      var guard = 0;
+      while (opts.length < 3 && guard < 40){
+        guard++;
+        var c = verifyAnswer + (Math.floor(Math.random() * 7) - 3);
+        if (c > 0 && opts.indexOf(c) === -1) opts.push(c);
+      }
+      for (var i = opts.length - 1; i > 0; i--){
+        var j = Math.floor(Math.random() * (i + 1));
+        var t = opts[i]; opts[i] = opts[j]; opts[j] = t;
+      }
+      var box = $("verifyOpts");
+      box.innerHTML = "";
+      opts.forEach(function(v){
+        var btn = document.createElement("button");
+        btn.type = "button";
+        btn.textContent = v;
+        btn.addEventListener("click", function(){
+          if (v === verifyAnswer){
+            humanVerified = true;
+            var action = pendingDownload;
+            closeVerify();
+            toast("Verified — you're human. Your download is starting…");
+            if (action) action();
+          } else {
+            var vb = $("verifyBox");
+            vb.classList.remove("wrong");
+            void vb.offsetWidth;
+            vb.classList.add("wrong");
+            $("verifyNote").textContent = "Not quite — here is a fresh sum. Bots hate this part; humans don't.";
+            newVerifyQuestion();
+          }
+        });
+        box.appendChild(btn);
+      });
+    }
+    function openVerify(action){
+      pendingDownload = action;
+      $("verifyNote").textContent = "You only do this once per visit — after that, both downloads stay unlocked.";
+      newVerifyQuestion();
+      $("verifyBackdrop").hidden = false;
+    }
+    function closeVerify(){
+      $("verifyBackdrop").hidden = true;
+      pendingDownload = null;
+    }
+    function requireHuman(action){
+      if (humanVerified){ action(); return; }
+      openVerify(action);
+    }
+    $("verifyCancel").addEventListener("click", closeVerify);
+    $("verifyBackdrop").addEventListener("click", function(e){ if (e.target === this) closeVerify(); });
+    document.addEventListener("keydown", function(e){
+      if (e.key === "Escape" && !$("verifyBackdrop").hidden) closeVerify();
+    });
+
+    /* ---------- Copy + download ---------- */
+    function copyText(text){
+      function done(){ toast("Message copied — paste it anywhere"); }
+      if (navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(text).then(done, function(){ fallback(); });
+      } else { fallback(); }
+      function fallback(){
+        var ta = document.createElement("textarea");
+        ta.value = text;
+        ta.style.position = "fixed"; ta.style.opacity = "0";
+        document.body.appendChild(ta);
+        ta.select();
+        try { document.execCommand("copy"); done(); } catch(e){ toast("Copy not available here"); }
+        document.body.removeChild(ta);
+      }
+    }
+    $("copyMsgBtn").addEventListener("click", function(){
+      if (state.selectedMsg) copyText(fillName(state.selectedMsg));
+      else toast("Unlock a message first — tap a sealed card to open it");
+    });
+    $("downloadBtn").addEventListener("click", function(){ requireHuman(doDownloadPicture); });
+    function doDownloadPicture(){
+      if (!downloadCooldownOk()) return;
+      var canvas = $("cardCanvas");
+      function save(blob){
+        if (!blob){ toast("Could not create the picture"); return; }
+        var url = URL.createObjectURL(blob);
+        var a = document.createElement("a");
+        a.href = url;
+        var slug = displayName().toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "") || "wish";
+        a.download = "wish-card-" + state.occasion + "-" + slug + ".png";
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        setTimeout(function(){ URL.revokeObjectURL(url); }, 3000);
+        toast("Card picture downloaded");
+      }
+      if (canvas.toBlob) canvas.toBlob(save, "image/png");
+      else {
+        try {
+          var a = document.createElement("a");
+          a.href = canvas.toDataURL("image/png");
+          a.download = "wish-card.png";
+          document.body.appendChild(a); a.click(); document.body.removeChild(a);
+          toast("Card picture downloaded");
+        } catch(e){ toast("Download not available here"); }
+      }
+    }
+
+    /* ---------- Interactive 3D gift download (locked, tap to unlock) ---------- */
+    function escapeHtml(s){
+      return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#39;");
+    }
+    function buildGiftFile(){
+      var canvas = $("cardCanvas");
+      var th = getTheme();
+      var occ = getOccasion();
+      var imgData = "";
+      try { imgData = canvas.toDataURL("image/png"); } catch(e){ return null; }
+      var nameEsc = escapeHtml(displayName());
+      var senderEsc = escapeHtml(state.sender.trim());
+      var headEsc = escapeHtml(occ.headline);
+      var msgEsc = escapeHtml(fillName(state.selectedMsg));
+      var fromLine = senderEsc ? ("From " + senderEsc) : "";
+      var css = [
+        "*{box-sizing:border-box}html,body{margin:0;padding:0}",
+        "body{min-height:100vh;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:" + th.ink + ";background:linear-gradient(155deg," + th.bg[0] + "," + th.bg[1] + ");display:flex;align-items:center;justify-content:center;padding:28px 16px 40px;overflow-x:hidden}",
+        ".orb{position:fixed;border-radius:50%;pointer-events:none;opacity:.5;animation:floaty 8s ease-in-out infinite}",
+        "@keyframes floaty{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-26px) rotate(10deg)}}",
+        ".stage{width:min(560px,100%);text-align:center;perspective:1400px;position:relative;z-index:1}",
+        ".kicker{letter-spacing:.18em;text-transform:uppercase;font-size:12px;font-weight:800;opacity:.75;margin:0 0 8px}",
+        "h1{font-size:clamp(26px,6vw,38px);line-height:1.12;margin:0 0 8px}",
+        ".for{font-size:17px;font-weight:700;opacity:.85;margin:0 0 4px}",
+        ".from{font-size:14px;font-weight:700;opacity:.65;margin:0 0 26px}",
+        ".gift-scene{perspective:1100px;display:flex;flex-direction:column;align-items:center}",
+        ".gift{position:relative;width:220px;height:200px;cursor:pointer;transform-style:preserve-3d;animation:giftFloat 3.2s ease-in-out infinite;border:0;background:transparent;padding:0}",
+        "@keyframes giftFloat{0%,100%{transform:translateY(0) rotateY(-7deg) rotateX(4deg)}50%{transform:translateY(-14px) rotateY(8deg) rotateX(-3deg)}}",
+        ".gift:active{transform:scale(.97)}",
+        ".gift:focus-visible{outline:3px solid " + th.accent + ";outline-offset:8px;border-radius:14px}",
+        ".box-body{position:absolute;left:10px;right:10px;bottom:0;height:128px;border-radius:14px;background:linear-gradient(160deg," + th.accent + ",rgba(0,0,0,.22));box-shadow:0 26px 44px rgba(0,0,0,.35),inset 0 2px 0 rgba(255,255,255,.35)}",
+        ".box-body:before{content:'';position:absolute;top:0;bottom:0;left:50%;width:34px;transform:translateX(-50%);background:rgba(255,255,255,.88)}",
+        ".lid{position:absolute;left:0;right:0;top:28px;height:46px;border-radius:12px;background:linear-gradient(160deg," + th.accent + ",rgba(0,0,0,.16));box-shadow:0 10px 22px rgba(0,0,0,.28),inset 0 2px 0 rgba(255,255,255,.4);transform-origin:18% 100%;z-index:3}",
+        ".lid:before{content:'';position:absolute;top:0;bottom:0;left:50%;width:34px;transform:translateX(-50%);background:rgba(255,255,255,.92)}",
+        ".bow{position:absolute;top:-4px;left:50%;transform:translateX(-50%);z-index:4;width:110px;height:44px}",
+        ".bow:before,.bow:after{content:'';position:absolute;top:2px;width:52px;height:36px;border:9px solid rgba(255,255,255,.92);border-radius:50%}",
+        ".bow:before{left:0;transform:rotate(-24deg)}.bow:after{right:0;transform:rotate(24deg)}",
+        ".lock{position:absolute;left:50%;top:96px;transform:translateX(-50%);z-index:5;width:58px;height:58px;border-radius:50%;background:#1d1508;color:#ffe9a8;display:flex;align-items:center;justify-content:center;font-size:27px;box-shadow:0 12px 24px rgba(0,0,0,.4);animation:lockPulse 1.8s ease-in-out infinite}",
+        "@keyframes lockPulse{0%,100%{transform:translateX(-50%) scale(1) rotate(0)}10%{transform:translateX(-50%) scale(1.06) rotate(-7deg)}20%{transform:translateX(-50%) scale(1.06) rotate(6deg)}30%{transform:translateX(-50%) scale(1) rotate(0)}}",
+        ".gift.opening .lid{animation:lidFly .8s cubic-bezier(.2,.7,.3,1) forwards}",
+        ".gift.opening .bow{animation:lidFly .8s cubic-bezier(.2,.7,.3,1) forwards}",
+        ".gift.opening .lock{animation:lockPop .45s ease forwards}",
+        ".gift.opening{animation:giftOpen .9s cubic-bezier(.2,.8,.3,1) forwards}",
+        "@keyframes lidFly{to{transform:translate(-46px,-120px) rotate(-38deg);opacity:0}}",
+        "@keyframes lockPop{to{transform:translateX(-50%) scale(1.7);opacity:0}}",
+        "@keyframes giftOpen{35%{transform:scale(1.06) translateY(-6px)}100%{transform:scale(.82) translateY(26px);opacity:0}}",
+        ".tap{margin:22px 0 0;font-weight:800;font-size:16px}",
+        ".tap small{display:block;font-weight:700;opacity:.65;font-size:13px;margin-top:4px}",
+        ".card-zone{display:none}",
+        ".card-zone.show{display:block}",
+        ".card3d{transform-style:preserve-3d;will-change:transform;animation:cardIn 1s cubic-bezier(.16,.84,.3,1.15) both}",
+        "@keyframes cardIn{0%{transform:perspective(1400px) rotateY(-96deg) rotateX(10deg) scale(.82) translateY(36px);opacity:0}55%{opacity:1}100%{transform:perspective(1400px) rotateY(0) rotateX(0) scale(1) translateY(0);opacity:1}}",
+        ".card3d img{width:100%;height:auto;display:block;border-radius:16px;box-shadow:0 34px 64px rgba(0,0,0,.42),0 8px 20px rgba(0,0,0,.25)}",
+        ".msg{margin:20px auto 0;max-width:46ch;font-size:16.5px;line-height:1.6;font-weight:600;opacity:.92}",
+        ".again{margin-top:22px;padding:12px 20px;border-radius:999px;border:2px solid " + th.accent + ";background:transparent;color:inherit;font:inherit;font-weight:800;cursor:pointer}",
+        ".again:hover{background:" + th.accent + ";color:#fff}",
+        ".piece{position:fixed;top:38%;left:50%;width:12px;height:12px;z-index:9;pointer-events:none}",
+        "@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}"
+      ].join("\n");
+      var js = [
+        "var gift=document.getElementById('gift'),zone=document.getElementById('cardZone'),tap=document.getElementById('tapHint'),card=document.getElementById('card3d'),opened=false;",
+        "function burst(){var colors=['#E4572E','#E9B949','#2E9E63','#2E7CD6','#C14B6E','" + th.accent + "'];for(var i=0;i<44;i++){var p=document.createElement('span');p.className='piece';p.style.background=colors[i%colors.length];p.style.borderRadius=(i%3===0)?'50%':'3px';document.body.appendChild(p);var a=(Math.PI*2*i)/44+Math.random()*.5,d=130+Math.random()*230,dx=Math.cos(a)*d,dy=Math.sin(a)*d-70,r=Math.random()*560-280;p.animate([{transform:'translate3d(0,0,0) rotate(0)',opacity:1},{transform:'translate3d('+dx+'px,'+dy+'px,0) rotate('+r+'deg)',opacity:0}],{duration:1000+Math.random()*600,easing:'cubic-bezier(.15,.8,.3,1)'});(function(el){setTimeout(function(){if(el.parentNode)el.parentNode.removeChild(el);},1750);})(p);}}",
+        "function unlock(){if(opened)return;opened=true;gift.classList.add('opening');gift.setAttribute('aria-label','Gift opened');burst();setTimeout(burst,220);setTimeout(function(){gift.style.display='none';if(tap)tap.style.display='none';zone.classList.add('show');window.scrollTo({top:0,behavior:'smooth'});},720);}",
+        "gift.addEventListener('click',unlock);",
+        "gift.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();unlock();}});",
+        "document.getElementById('againBtn').addEventListener('click',function(){opened=false;zone.classList.remove('show');gift.style.display='';gift.classList.remove('opening');if(tap)tap.style.display='';gift.focus();window.scrollTo({top:0,behavior:'smooth'});});",
+        "var scene=document.getElementById('stage');",
+        "scene.addEventListener('pointermove',function(e){if(!opened)return;var r=scene.getBoundingClientRect(),px=(e.clientX-r.left)/r.width,py=(e.clientY-r.top)/r.height;card.style.transform='perspective(1400px) rotateX('+((0.5-py)*10).toFixed(2)+'deg) rotateY('+((px-0.5)*12).toFixed(2)+'deg)';});",
+        "scene.addEventListener('pointerleave',function(){card.style.transform='';});"
+      ].join("\n");
+      var html = "<!doctype html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">\n<meta name=\"referrer\" content=\"no-referrer\">\n<meta http-equiv=\"Content-Security-Policy\" content=\"default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src data:; base-uri 'none'\">\n<title>" + headEsc + " — a gift for " + nameEsc + "<\/title>\n<style>\n" + css + "\n<\/style>\n<\/head>\n<body>\n"
+        + "<span class=\"orb\" style=\"width:74px;height:74px;left:5%;top:10%;background:" + th.accent + "\"><\/span>"
+        + "<span class=\"orb\" style=\"width:40px;height:40px;right:7%;top:16%;background:" + th.accent + ";animation-delay:-2s\"><\/span>"
+        + "<span class=\"orb\" style=\"width:52px;height:52px;left:9%;bottom:12%;background:" + th.accent + ";animation-delay:-4s\"><\/span>"
+        + "<main class=\"stage\" id=\"stage\">"
+        + "<p class=\"kicker\">You have received a gift<\/p>"
+        + "<h1>" + headEsc + ", " + nameEsc + "!<\/h1>"
+        + "<p class=\"for\">A surprise wish is sealed inside — just for you.<\/p>"
+        + (fromLine ? "<p class=\"from\">" + escapeHtml(fromLine) + "<\/p>" : "<p class=\"from\"><\/p>")
+        + "<div class=\"gift-scene\">"
+        + "<button type=\"button\" class=\"gift\" id=\"gift\" aria-label=\"Locked gift — tap to unlock your surprise wish\">"
+        + "<span class=\"bow\"><\/span><span class=\"lid\"><\/span><span class=\"box-body\"><\/span><span class=\"lock\" aria-hidden=\"true\">&#128274;<\/span>"
+        + "<\/button>"
+        + "<p class=\"tap\" id=\"tapHint\">Tap the gift to unlock it<small>Your card is hidden inside<\/small><\/p>"
+        + "<noscript><p style=\"font-weight:700;opacity:.8;margin:14px 0 0\">JavaScript is turned off, so this gift stays sealed. Open this file in a browser with JavaScript on, then tap the gift to unlock your card.<\/p><\/noscript>"
+        + "<\/div>"
+        + "<section class=\"card-zone\" id=\"cardZone\" aria-live=\"polite\">"
+        + "<div class=\"card3d\" id=\"card3d\"><img src=\"" + imgData + "\" alt=\"Greeting card: " + headEsc + " for " + nameEsc + "\"><\/div>"
+        + "<p class=\"msg\">" + msgEsc + "<\/p>"
+        + "<button type=\"button\" class=\"again\" id=\"againBtn\">&#128274; Lock it again &amp; replay<\/button>"
+        + "<\/section>"
+        + "<\/main>\n<script>\n" + js + "\n<\/script>\n<\/body>\n<\/html>";
+      return html;
+    }
+    $("downloadGiftBtn").addEventListener("click", function(){
+      if (!state.selectedMsg){ toast("Unlock a message first — tap a sealed card, then download the 3D gift"); return; }
+      requireHuman(doDownloadGift);
+    });
+    function doDownloadGift(){
+      if (!downloadCooldownOk()) return;
+      var html = buildGiftFile();
+      if (!html){ toast("Could not create the 3D gift file"); return; }
+      var blob = new Blob([html], { type:"text/html;charset=utf-8" });
+      var url = URL.createObjectURL(blob);
+      var a = document.createElement("a");
+      a.href = url;
+      var slug = displayName().toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "") || "wish";
+      a.download = "3d-gift-" + state.occasion + "-for-" + slug + ".html";
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      setTimeout(function(){ URL.revokeObjectURL(url); }, 3000);
+      toast("3D gift downloaded — send the file; they tap the gift to unlock it");
+      if (typeof celebrateBurst === "function") celebrateBurst();
+    }
+
+    /* ================= CARD RENDERING ================= */
+    function mulberry(seed){
+      var a = seed >>> 0;
+      return function(){
+        a |= 0; a = (a + 0x6D2B79F5) | 0;
+        var t = Math.imul(a ^ (a >>> 15), 1 | a);
+        t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+        return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+      };
+    }
+
+    function wrapText(ctx, text, maxWidth){
+      var words = text.split(/\s+/);
+      var lines = [], line = "";
+      for (var i=0;i<words.length;i++){
+        var test = line ? line + " " + words[i] : words[i];
+        if (ctx.measureText(test).width > maxWidth && line){ lines.push(line); line = words[i]; }
+        else line = test;
+      }
+      if (line) lines.push(line);
+      return lines;
+    }
+
+    function drawHeart(ctx, x, y, s, color, alpha){
+      ctx.save();
+      ctx.globalAlpha = alpha;
+      ctx.translate(x, y);
+      ctx.scale(s / 24, s / 24);
+      ctx.beginPath();
+      ctx.moveTo(0, 8.5);
+      ctx.bezierCurveTo(-11, -1, -8.5, -11, -3.8, -11);
+      ctx.bezierCurveTo(-1.4, -11, 0, -9.6, 0, -8.2);
+      ctx.bezierCurveTo(0, -9.6, 1.4, -11, 3.8, -11);
+      ctx.bezierCurveTo(8.5, -11, 11, -1, 0, 8.5);
+      ctx.fillStyle = color;
+      ctx.fill();
+      ctx.restore();
+    }
+
+    function drawSparkle(ctx, x, y, s, color, alpha){
+      ctx.save();
+      ctx.globalAlpha = alpha;
+      ctx.translate(x, y);
+      ctx.beginPath();
+      ctx.moveTo(0, -s);
+      ctx.quadraticCurveTo(s * 0.16, -s * 0.16, s, 0);
+      ctx.quadraticCurveTo(s * 0.16, s * 0.16, 0, s);
+      ctx.quadraticCurveTo(-s * 0.16, s * 0.16, -s, 0);
+      ctx.quadraticCurveTo(-s * 0.16, -s * 0.16, 0, -s);
+      ctx.fillStyle = color;
+      ctx.fill();
+      ctx.restore();
+    }
+
+    function drawFlower(ctx, x, y, s, petal, center, alpha){
+      ctx.save();
+      ctx.globalAlpha = alpha;
+      ctx.fillStyle = petal;
+      for (var i=0;i<5;i++){
+        var a = (Math.PI * 2 * i) / 5 - Math.PI / 2;
+        ctx.beginPath();
+        ctx.arc(x + Math.cos(a) * s * 0.62, y + Math.sin(a) * s * 0.62, s * 0.52, 0, Math.PI * 2);
+        ctx.fill();
+      }
+      ctx.fillStyle = center;
+      ctx.beginPath();
+      ctx.arc(x, y, s * 0.42, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.restore();
+    }
+
+    function drawBalloon(ctx, x, y, s, color, alpha, rnd){
+      ctx.save();
+      ctx.globalAlpha = alpha;
+      ctx.fillStyle = color;
+      ctx.beginPath();
+      ctx.ellipse(x, y, s * 0.72, s * 0.9, 0, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.fillStyle = "rgba(255,255,255,.35)";
+      ctx.beginPath();
+      ctx.ellipse(x - s * 0.28, y - s * 0.34, s * 0.16, s * 0.26, -0.5, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.fillStyle = color;
+      ctx.beginPath();
+      ctx.moveTo(x - 6, y + s * 0.92);
+      ctx.lineTo(x + 6, y + s * 0.92);
+      ctx.lineTo(x, y + s * 1.08);
+      ctx.closePath();
+      ctx.fill();
+      ctx.strokeStyle = color;
+      ctx.lineWidth = 3;
+      ctx.beginPath();
+      ctx.moveTo(x, y + s * 1.08);
+      var wave = (rnd() - 0.5) * 40;
+      ctx.bezierCurveTo(x + wave, y + s * 1.7, x - wave, y + s * 2.2, x + wave * 0.5, y + s * 2.9);
+      ctx.stroke();
+      ctx.restore();
+    }
+
+    function drawButterfly(ctx, x, y, s, color, bodyColor, alpha){
+      ctx.save();
+      ctx.globalAlpha = alpha;
+      ctx.translate(x, y);
+      ctx.fillStyle = color;
+      ctx.save(); ctx.rotate(-0.55); ctx.beginPath(); ctx.ellipse(-s * 0.44, -s * 0.3, s * 0.52, s * 0.3, 0, 0, Math.PI * 2); ctx.fill(); ctx.restore();
+      ctx.save(); ctx.rotate(0.55); ctx.beginPath(); ctx.ellipse(s * 0.44, -s * 0.3, s * 0.52, s * 0.3, 0, 0, Math.PI * 2); ctx.fill(); ctx.restore();
+      ctx.save(); ctx.rotate(0.5); ctx.beginPath(); ctx.ellipse(-s * 0.36, s * 0.32, s * 0.38, s * 0.24, 0, 0, Math.PI * 2); ctx.fill(); ctx.restore();
+      ctx.save(); ctx.rotate(-0.5); ctx.beginPath(); ctx.ellipse(s * 0.36, s * 0.32, s * 0.38, s * 0.24, 0, 0, Math.PI * 2); ctx.fill(); ctx.restore();
+      ctx.fillStyle = "rgba(255,255,255,.35)";
+      ctx.beginPath(); ctx.arc(-s * 0.44, -s * 0.34, s * 0.13, 0, Math.PI * 2); ctx.fill();
+      ctx.beginPath(); ctx.arc(s * 0.44, -s * 0.34, s * 0.13, 0, Math.PI * 2); ctx.fill();
+      ctx.fillStyle = bodyColor;
+      ctx.beginPath(); ctx.ellipse(0, 0, s * 0.11, s * 0.52, 0, 0, Math.PI * 2); ctx.fill();
+      ctx.strokeStyle = bodyColor;
+      ctx.lineWidth = Math.max(2, s * 0.05);
+      ctx.lineCap = "round";
+      ctx.beginPath(); ctx.moveTo(0, -s * 0.44); ctx.quadraticCurveTo(-s * 0.2, -s * 0.74, -s * 0.36, -s * 0.8); ctx.stroke();
+      ctx.beginPath(); ctx.moveTo(0, -s * 0.44); ctx.quadraticCurveTo(s * 0.2, -s * 0.74, s * 0.36, -s * 0.8); ctx.stroke();
+      ctx.restore();
+    }
+
+    function drawGift(ctx, cx, cy, w, th){
+      var h = w * 0.78, lidH = w * 0.2;
+      ctx.save();
+      ctx.translate(cx, cy);
+      ctx.fillStyle = th.dark ? "rgba(255,255,255,.10)" : "rgba(255,255,255,.55)";
+      roundRect(ctx, -w/2, -h/2 + lidH, w, h - lidH, 10); ctx.fill();
+      ctx.fillStyle = th.accent;
+      roundRect(ctx, -w/2 - 8, -h/2, w + 16, lidH, 10); ctx.fill();
+      ctx.fillRect(-w * 0.09, -h/2, w * 0.18, h);
+      ctx.strokeStyle = th.accent;
+      ctx.lineWidth = 9;
+      ctx.beginPath(); ctx.ellipse(-w * 0.2, -h/2 - w * 0.1, w * 0.2, w * 0.11, -0.5, 0, Math.PI * 2); ctx.stroke();
+      ctx.beginPath(); ctx.ellipse(w * 0.2, -h/2 - w * 0.1, w * 0.2, w * 0.11, 0.5, 0, Math.PI * 2); ctx.stroke();
+      ctx.restore();
+    }
+
+    function roundRect(ctx, x, y, w, h, r){
+      ctx.beginPath();
+      ctx.moveTo(x + r, y);
+      ctx.arcTo(x + w, y, x + w, y + h, r);
+      ctx.arcTo(x + w, y + h, x, y + h, r);
+      ctx.arcTo(x, y + h, x, y, r);
+      ctx.arcTo(x, y, x + w, y, r);
+      ctx.closePath();
+    }
+
+    function drawDecorations(ctx, W, H, occ, th, deco){
+      deco = deco || deco;
+      var rnd = mulberry(1234 + state.occasion.length * 77 + state.theme.length * 131);
+      var C = th.colors;
+      var i, x, y, s, c;
+      function pick(){ return C[Math.floor(rnd() * C.length)]; }
+      if (deco === "confetti" || deco === "firework"){
+        for (i=0;i<110;i++){
+          x = rnd() * W; y = rnd() * H;
+          if (y > 430 && y < 1080 && x > 90 && x < W - 90) continue;
+          c = pick(); s = 6 + rnd() * 12;
+          ctx.save(); ctx.globalAlpha = th.decoAlpha * (0.5 + rnd() * 0.5);
+          ctx.translate(x, y); ctx.rotate(rnd() * Math.PI);
+          ctx.fillStyle = c;
+          if (rnd() > 0.5){ ctx.beginPath(); ctx.arc(0, 0, s * 0.4, 0, Math.PI * 2); ctx.fill(); }
+          else ctx.fillRect(-s/2, -s/5, s, s * 0.4);
+          ctx.restore();
+        }
+        if (deco === "firework"){
+          [[220,200],[860,170],[540,120]].forEach(function(p){
+            for (var k=0;k<14;k++){
+              var a = (Math.PI * 2 * k) / 14, r = 46 + rnd() * 30;
+              drawSparkle(ctx, p[0] + Math.cos(a) * r, p[1] + Math.sin(a) * r, 9 + rnd() * 8, th.accent, 0.9);
+            }
+            drawSparkle(ctx, p[0], p[1], 14, th.accent, 1);
+          });
+        }
+      }
+      if (deco === "balloons"){
+        drawBalloon(ctx, 120, 190, 74, C[0], .95, rnd);
+        drawBalloon(ctx, 215, 130, 56, C[1 % C.length], .9, rnd);
+        drawBalloon(ctx, 958, 180, 78, C[2 % C.length], .95, rnd);
+        drawBalloon(ctx, 862, 118, 54, C[3 % C.length], .9, rnd);
+        drawBalloon(ctx, 105, 1130, 58, C[1 % C.length], .85, rnd);
+        drawBalloon(ctx, 972, 1122, 62, C[0], .85, rnd);
+        for (i=0;i<70;i++){
+          x = rnd() * W; y = rnd() * H;
+          if (y > 430 && y < 1080 && x > 90 && x < W - 90) continue;
+          ctx.save(); ctx.globalAlpha = .55;
+          ctx.translate(x, y); ctx.rotate(rnd() * Math.PI);
+          ctx.fillStyle = pick();
+          ctx.fillRect(-6, -2.5, 12, 5);
+          ctx.restore();
+        }
+      }
+      if (deco === "hearts"){
+        var spots = [[110,170],[960,160],[180,300],[890,310],[90,700],[985,690],[140,1120],[940,1130],[250,90],[830,80],[540,90],[70,450],[1010,460]];
+        spots.forEach(function(p, idx){
+          drawHeart(ctx, p[0], p[1], 26 + (idx % 4) * 9, pick(), 0.5 + (idx % 3) * 0.18);
+        });
+      }
+      if (deco === "sparkle" || deco === "stars"){
+        for (i=0;i<26;i++){
+          x = 60 + rnd() * (W - 120); y = 60 + rnd() * (H - 120);
+          if (y > 420 && y < 1090 && x > 80 && x < W - 80) continue;
+          drawSparkle(ctx, x, y, 8 + rnd() * 16, rnd() > 0.4 ? th.accent : pick(), 0.55 + rnd() * 0.45);
+        }
+        for (i=0;i<40;i++){
+          ctx.save(); ctx.globalAlpha = 0.35 + rnd() * 0.4;
+          ctx.fillStyle = pick();
+          ctx.beginPath(); ctx.arc(rnd() * W, rnd() * H, 2.5 + rnd() * 3.5, 0, Math.PI * 2); ctx.fill();
+          ctx.restore();
+        }
+      }
+      if (deco === "floral"){
+        drawFlower(ctx, 92, 96, 46, C[0], th.accent, .95);
+        drawFlower(ctx, 988, 92, 52, C[1 % C.length], th.accent, .95);
+        drawFlower(ctx, 84, 1256, 50, C[1 % C.length], th.accent, .9);
+        drawFlower(ctx, 992, 1262, 44, C[0], th.accent, .9);
+        drawFlower(ctx, 180, 190, 26, C[2 % C.length], th.accent, .7);
+        drawFlower(ctx, 905, 195, 28, C[2 % C.length], th.accent, .7);
+        drawFlower(ctx, 540, 70, 24, C[0], th.accent, .6);
+      }
+      if (deco === "butterflies"){
+        var bodyCol = th.dark ? "#221503" : "#4A3410";
+        var bSpots = [[128,182],[952,168],[205,322],[878,306],[118,1078],[962,1088],[540,84],[86,560],[994,545],[300,1160],[790,1170]];
+        bSpots.forEach(function(p, idx){
+          drawButterfly(ctx, p[0], p[1], 30 + (idx % 3) * 11, pick(), bodyCol, 0.7 + (idx % 3) * 0.13);
+        });
+        for (i=0;i<18;i++){
+          x = 60 + rnd() * (W - 120); y = 60 + rnd() * (H - 120);
+          if (y > 420 && y < 1090 && x > 80 && x < W - 80) continue;
+          drawSparkle(ctx, x, y, 6 + rnd() * 10, th.accent, 0.4 + rnd() * 0.35);
+        }
+      }
+      if (deco === "snow"){
+        for (i=0;i<80;i++){
+          ctx.save(); ctx.globalAlpha = 0.25 + rnd() * 0.55;
+          ctx.fillStyle = th.dark ? "#FFFFFF" : "#FFFFFF";
+          ctx.beginPath(); ctx.arc(rnd() * W, rnd() * H, 3 + rnd() * 7, 0, Math.PI * 2); ctx.fill();
+          ctx.restore();
+        }
+        for (i=0;i<14;i++) drawSparkle(ctx, 60 + rnd() * (W - 120), 60 + rnd() * 300, 9 + rnd() * 9, th.accent, .8);
+      }
+      if (deco === "moon"){
+        ctx.save();
+        ctx.translate(882, 178);
+        ctx.fillStyle = th.accent;
+        ctx.beginPath(); ctx.arc(0, 0, 62, 0, Math.PI * 2); ctx.fill();
+        ctx.globalCompositeOperation = "destination-out";
+        ctx.beginPath(); ctx.arc(30, -18, 52, 0, Math.PI * 2); ctx.fill();
+        ctx.restore();
+        for (i=0;i<22;i++){
+          x = 50 + rnd() * (W - 100); y = 50 + rnd() * 420;
+          if (x > 760 && y < 320) continue;
+          drawSparkle(ctx, x, y, 7 + rnd() * 13, th.accent, 0.6 + rnd() * 0.4);
+        }
+        for (i=0;i<10;i++) drawSparkle(ctx, 50 + rnd() * (W - 100), 1120 + rnd() * 170, 7 + rnd() * 11, th.accent, .7);
+      }
+    }
+
+    function drawCard(){
+      var canvas = $("cardCanvas");
+      var ctx = canvas.getContext("2d");
+      var W = canvas.width, H = canvas.height;
+      var th = getTheme();
+      var occ = getOccasion();
+
+      var grad = ctx.createLinearGradient(0, 0, W * 0.4, H);
+      grad.addColorStop(0, th.bg[0]);
+      grad.addColorStop(1, th.bg[1]);
+      ctx.fillStyle = grad;
+      ctx.fillRect(0, 0, W, H);
+
+      /* the card wears the decoration style of the opened message —
+         balloons, hearts, flowers, butterflies… — otherwise the occasion's own */
+      var effDeco = getDecoStyle(state.cardDeco) ? state.cardDeco : occ.deco;
+      drawDecorations(ctx, W, H, occ, th, effDeco);
+
+      /* frame */
+      ctx.strokeStyle = th.accent;
+      ctx.globalAlpha = 0.85; ctx.lineWidth = 3;
+      ctx.strokeRect(38, 38, W - 76, H - 76);
+      ctx.globalAlpha = 0.45; ctx.lineWidth = 1.2;
+      ctx.strokeRect(54, 54, W - 108, H - 108);
+      ctx.globalAlpha = 1;
+
+      ctx.textAlign = "center";
+      ctx.textBaseline = "middle";
+
+      /* occasion tag pill */
+      var tagText = occ.tag.toUpperCase();
+      ctx.font = "700 27px Nunito, sans-serif";
+      var tw = ctx.measureText(tagText).width + 56;
+      ctx.fillStyle = th.accent;
+      roundRect(ctx, W/2 - tw/2, 104, tw, 52, 26); ctx.fill();
+      ctx.fillStyle = th.dark ? "#1D1206" : "#FFF9EC";
+      ctx.fillText(tagText, W/2, 132);
+
+      /* headline */
+      ctx.fillStyle = th.ink;
+      var hSize = 86;
+      ctx.font = "800 " + hSize + "px 'Playfair Display', serif";
+      while (ctx.measureText(occ.headline).width > W - 220 && hSize > 44){
+        hSize -= 4;
+        ctx.font = "800 " + hSize + "px 'Playfair Display', serif";
+      }
+      ctx.fillText(occ.headline, W/2, 248);
+
+      /* name in script */
+      var name = displayName();
+      var nSize = 118;
+      ctx.font = nSize + "px 'Great Vibes', cursive";
+      while (ctx.measureText(name).width > W - 200 && nSize > 46){
+        nSize -= 5;
+        ctx.font = nSize + "px 'Great Vibes', cursive";
+      }
+      ctx.fillStyle = th.accent;
+      ctx.fillText(name, W/2, 372);
+
+      /* divider */
+      ctx.strokeStyle = th.accent;
+      ctx.lineWidth = 2.4;
+      ctx.beginPath(); ctx.moveTo(W/2 - 190, 452); ctx.lineTo(W/2 - 26, 452); ctx.stroke();
+      ctx.beginPath(); ctx.moveTo(W/2 + 26, 452); ctx.lineTo(W/2 + 190, 452); ctx.stroke();
+      ctx.save();
+      ctx.translate(W/2, 452); ctx.rotate(Math.PI / 4);
+      ctx.fillStyle = th.accent;
+      ctx.fillRect(-10, -10, 20, 20);
+      ctx.restore();
+
+      /* message — while everything is still locked, the card shows a sealed hint */
+      var msg = state.selectedMsg ? fillName(state.selectedMsg) : "Your surprise wish is still sealed…\nTap a locked message to open it and watch it appear here.";
+      ctx.fillStyle = th.sub;
+      ctx.font = "600 39px Nunito, sans-serif";
+      var lines = wrapText(ctx, msg, W - 250);
+      var lh = 57;
+      var totalH = lines.length * lh;
+      var startY = 640 - totalH / 2 + lh / 2;
+      if (startY < 520) startY = 520;
+      for (var i=0;i<lines.length;i++) ctx.fillText(lines[i], W/2, startY + i * lh);
+
+      /* gift motif on balloon cards / thank-you */
+      if (effDeco === "balloons" || occ.id === "thanks"){
+        drawGift(ctx, W/2, 1068, 128, th);
+      } else {
+        drawSparkle(ctx, W/2 - 60, 1068, 13, th.accent, .9);
+        drawSparkle(ctx, W/2, 1068, 19, th.accent, 1);
+        drawSparkle(ctx, W/2 + 60, 1068, 13, th.accent, .9);
+      }
+
+      /* sender */
+      var sender = state.sender.trim();
+      ctx.fillStyle = th.ink;
+      ctx.font = "italic 600 36px 'Playfair Display', serif";
+      ctx.fillText(sender ? "With love, " + sender : "With love", W/2, 1196);
+      ctx.fillStyle = th.sub;
+      ctx.font = "700 24px Nunito, sans-serif";
+      ctx.fillText("· MADE WITH THE WISHES CARD GENERATOR ·", W/2, 1252);
+    }
+
+    /* ---------- 3D Motion ---------- */
+    var motionOn = true;
+    var tiltWrap = $("tiltWrap");
+    var cardScene = $("cardScene");
+    var cardShine = $("cardShine");
+    function triggerFlip(){
+      if (!motionOn || !tiltWrap) return;
+      tiltWrap.classList.remove("flipping");
+      void tiltWrap.offsetWidth;
+      tiltWrap.classList.add("flipping");
+      setTimeout(function(){ tiltWrap.classList.remove("flipping"); }, 860);
+    }
+    function celebrateBurst(){
+      if (!motionOn || !tiltWrap) return;
+      tiltWrap.classList.remove("celebrating");
+      void tiltWrap.offsetWidth;
+      tiltWrap.classList.add("celebrating");
+      var colors = ["#E4572E","#E9B949","#2E9E63","#2E7CD6","#C14B6E","#E9C979"];
+      var rect = tiltWrap.getBoundingClientRect();
+      for (var i=0;i<36;i++){
+        var p = document.createElement("span");
+        p.className = "burst-piece";
+        p.style.background = colors[i % colors.length];
+        p.style.borderRadius = (i % 3 === 0) ? "50%" : "3px";
+        tiltWrap.appendChild(p);
+        var angle = (Math.PI * 2 * i) / 36 + Math.random() * 0.4;
+        var dist = 120 + Math.random() * 190;
+        var dx = Math.cos(angle) * dist;
+        var dy = Math.sin(angle) * dist - 60;
+        var rz = Math.random() * 540 - 270;
+        var rx = Math.random() * 360;
+        p.animate([
+          { transform:"translate3d(0,0,60px) rotate(0deg)", opacity:1 },
+          { transform:"translate3d(" + dx + "px," + dy + "px,80px) rotateX(" + rx + "deg) rotate(" + rz + "deg)", opacity:0 }
+        ], { duration: 950 + Math.random() * 500, easing:"cubic-bezier(.15,.8,.3,1)" });
+        (function(el){ setTimeout(function(){ if(el.parentNode) el.parentNode.removeChild(el); }, 1550); })(p);
+      }
+      setTimeout(function(){ tiltWrap.classList.remove("celebrating"); }, 750);
+    }
+    if (cardScene && tiltWrap){
+      cardScene.addEventListener("pointermove", function(e){
+        if (!motionOn) return;
+        var r = cardScene.getBoundingClientRect();
+        var px = (e.clientX - r.left) / r.width;
+        var py = (e.clientY - r.top) / r.height;
+        var ry = (px - 0.5) * 16;
+        var rx = (0.5 - py) * 14;
+        tiltWrap.classList.add("is-tilting");
+        tiltWrap.style.transform = "perspective(1400px) rotateX(" + rx.toFixed(2) + "deg) rotateY(" + ry.toFixed(2) + "deg) translateZ(0)";
+        if (cardShine){ cardShine.style.setProperty("--mx", (px*100)+"%"); cardShine.style.setProperty("--my", (py*100)+"%"); }
+      });
+      cardScene.addEventListener("pointerleave", function(){
+        tiltWrap.classList.remove("is-tilting");
+        tiltWrap.style.transform = "";
+      });
+      /* gentle idle float when untouched */
+      var idleT = 0;
+      setInterval(function(){
+        if (!motionOn || tiltWrap.classList.contains("is-tilting") || tiltWrap.classList.contains("flipping")) return;
+        idleT += 0.6;
+        var rx2 = Math.sin(idleT * Math.PI / 180) * 2.2;
+        var ry2 = Math.cos(idleT * Math.PI / 180) * 2.8;
+        tiltWrap.style.transform = "perspective(1400px) rotateX(" + rx2.toFixed(2) + "deg) rotateY(" + ry2.toFixed(2) + "deg)";
+      }, 50);
+    }
+    var flipBtn = $("flipBtn"); if (flipBtn) flipBtn.addEventListener("click", triggerFlip);
+    var celBtn = $("celebrateBtn"); if (celBtn) celBtn.addEventListener("click", function(){ celebrateBurst(); toast("Celebration! Your 3D card is ready"); });
+    var motBtn = $("motionToggleBtn");
+    if (motBtn) motBtn.addEventListener("click", function(){
+      motionOn = !motionOn;
+      document.body.classList.toggle("motion-off", !motionOn);
+      motBtn.textContent = motionOn ? "3D Motion: ON" : "3D Motion: OFF";
+      motBtn.setAttribute("aria-pressed", motionOn ? "true" : "false");
+      if (!motionOn && tiltWrap) tiltWrap.style.transform = "";
+      if (motionOn) triggerFlip();
+      toast(motionOn ? "3D animations on" : "3D animations off");
+    });
+    /* flip on shuffle & surprise for extra life */
+    var shBtn = $("shuffleBtn"); if (shBtn) shBtn.addEventListener("click", function(){ setTimeout(triggerFlip, 30); });
+    var suBtn = $("surpriseBtn"); if (suBtn) suBtn.addEventListener("click", function(){ setTimeout(function(){ triggerFlip(); celebrateBurst(); }, 40); });
+
+    /* ---------- Init ---------- */
+    state.seed = Math.floor(Math.random() * 900000) + 17; /* every visit starts with a different set */
+    syncSwatches();
+    renderMessages();
+    drawCard();
+    if (document.fonts && document.fonts.ready){
+      document.fonts.ready.then(function(){ drawCard(); });
+    }
+    </script>
+  </body>
+</html>
